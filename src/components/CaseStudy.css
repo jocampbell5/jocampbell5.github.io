@@ -6,11 +6,26 @@
   overflow-y: auto;
 }
 
-.case-close {
-  position: fixed;
-  top: clamp(1.1rem, 2.5vw, 1.8rem);
-  right: var(--gutter);
-  z-index: 5;
+/* Sticky bar holding Back (left) + Close (right). Sticky (not fixed) so it
+   stays pinned inside the transformed, scrolling case-study container. */
+.case-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(1.1rem, 2.5vw, 1.8rem) var(--gutter);
+  pointer-events: none;
+  background: linear-gradient(to bottom, var(--bg) 35%, transparent);
+}
+
+.case-bar > button {
+  pointer-events: auto;
+}
+
+.case-close,
+.case-back-top {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -26,7 +41,17 @@
   transition: border-color 0.3s var(--easing), background 0.3s var(--easing);
 }
 
-.case-close:hover {
+.case-back-top svg {
+  color: var(--proj-accent);
+  transition: transform 0.3s var(--easing);
+}
+
+.case-back-top:hover svg {
+  transform: translateX(-4px);
+}
+
+.case-close:hover,
+.case-back-top:hover {
   border-color: var(--proj-accent);
 }
 
@@ -34,7 +59,8 @@
 .case-intro {
   max-width: 1180px;
   margin: 0 auto;
-  padding: clamp(5rem, 12vh, 8rem) var(--gutter) clamp(1.5rem, 3vw, 2.5rem);
+  /* small top pad — the sticky .case-bar already reserves space above */
+  padding: clamp(0.5rem, 2vh, 1.5rem) var(--gutter) clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .case-eyebrow {
