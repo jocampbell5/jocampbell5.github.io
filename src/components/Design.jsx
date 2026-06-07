@@ -37,12 +37,16 @@ export default function Design({ onClose }) {
             <h3 className="design-coll-title">{collection.title}</h3>
             {collection.blurb && <p className="design-coll-blurb">{collection.blurb}</p>}
 
-            <div className="design-grid">
+            <div
+              className={`design-grid ${
+                collection.layout === 'uniform' ? 'design-grid--uniform' : ''
+              }`}
+            >
               {collection.images.map((img) => (
                 <figure className="design-figure" key={img.src}>
                   <button
                     className="design-thumb"
-                    onClick={() => setLightbox(img.src)}
+                    onClick={() => setLightbox(img.full || img.src)}
                     aria-label={`Enlarge: ${img.caption}`}
                   >
                     <img src={img.src} alt={img.caption} loading="lazy" />

@@ -55,22 +55,23 @@ export default function About({ onClose }) {
         <div className="about-cols">
           <div className="about-bio">
             <p>
-              I’m John Campbell, an Unreal Engine developer specialising in
-              simulations, VR training, AI helpers, digital twins, and computer
-              vision. I turn complex systems into interactive experiences people
-              can step inside, understand, and learn from.
-            </p>
-            <p>
-              From physically-based flight sims to live factory twins and
-              conversational AI characters, my work sits where real-time graphics,
-              engineering, and human interaction meet — built to be both
-              technically rigorous and genuinely enjoyable to use.
-            </p>
-            <p>
-              I also use Unreal as a synthetic-data engine for computer vision:
+              I use Unreal Engine as a synthetic-data engine for computer vision —
               generating labelled images and video at scale, auto-exporting the
-              annotations, and feeding them straight into model training — so teams
+              annotations, and feeding them straight into model training, so teams
               can build vision models without the cost of hand-collected data.
+            </p>
+            <p>
+              I’m John Campbell, a Senior Software Developer specialising in
+              simulations, VR training, digital twins, and computer vision in
+              Unreal Engine. I turn complex systems into interactive experiences
+              people can step inside, understand, and learn from.
+            </p>
+            <p>
+              Highly skilled in Unreal Engine, C++, and a range of programming
+              languages, I’m dedicated to creating innovative software solutions
+              and providing technical leadership — and I’m seeking a challenging
+              role in a dynamic organization where I can drive software-development
+              projects to success.
             </p>
           </div>
 
