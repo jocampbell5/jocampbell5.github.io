@@ -1,0 +1,66 @@
+.project-menu {
+  position: fixed;
+  right: var(--gutter);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 35;
+}
+
+.project-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.9rem;
+  padding: 0.45rem 0;
+  width: 100%;
+  text-align: right;
+}
+
+.menu-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  transition: color 0.35s var(--easing), transform 0.35s var(--easing);
+}
+
+.menu-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  opacity: 0.5;
+  transition: all 0.35s var(--easing);
+  flex: none;
+}
+
+.menu-item:hover .menu-label {
+  color: var(--text-dim);
+}
+
+.menu-item--active .menu-label {
+  color: var(--text);
+  transform: translateX(-2px);
+}
+
+.menu-item--active .menu-dot {
+  background: var(--proj-accent);
+  opacity: 1;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--proj-accent) 22%, transparent);
+}
+
+@media (max-width: 720px) {
+  /* On phones the labels crowd the deck — show just the dots. */
+  .menu-label {
+    display: none;
+  }
+}

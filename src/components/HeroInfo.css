@@ -1,0 +1,103 @@
+.hero-info {
+  position: absolute;
+  left: var(--gutter);
+  bottom: clamp(2.5rem, 9vh, 6rem);
+  z-index: 30;
+  max-width: min(38vw, 460px);
+  pointer-events: none;
+}
+
+.hero-inner {
+  pointer-events: auto;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.hero-cat {
+  color: var(--proj-accent);
+}
+
+.hero-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-faint);
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  color: var(--proj-accent);
+}
+
+.hero-summary {
+  margin-top: 1.2rem;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.55;
+  color: var(--text-dim);
+  max-width: 30ch;
+}
+
+.hero-cta {
+  margin-top: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.hero-cta svg {
+  color: var(--proj-accent);
+  transition: transform 0.4s var(--easing);
+}
+
+.hero-cta:hover svg {
+  transform: translateX(6px);
+}
+
+@media (max-width: 900px) {
+  .hero-info {
+    left: 0;
+    right: 0;
+    max-width: none;
+    text-align: center;
+    padding: 0 var(--gutter);
+    bottom: 8vh;
+  }
+  .hero-eyebrow {
+    justify-content: center;
+  }
+  .hero-summary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-info {
+    bottom: 0;
+    padding: 5rem var(--gutter) 4.5rem;
+    /* scrim so the title stays legible over the deck behind it */
+    background: linear-gradient(
+      to top,
+      var(--bg) 32%,
+      rgba(8, 8, 10, 0.88) 62%,
+      transparent 100%
+    );
+  }
+  .hero-title {
+    font-size: clamp(2.6rem, 14vw, 4rem);
+  }
+}

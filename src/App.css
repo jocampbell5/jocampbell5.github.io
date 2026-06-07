@@ -1,0 +1,29 @@
+/* ============================================================
+   App layout — the stage that holds the whole experience
+   ============================================================ */
+
+.stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      120% 90% at 70% 10%,
+      color-mix(in srgb, var(--proj-accent) 9%, transparent),
+      transparent 60%
+    ),
+    var(--bg);
+  transition: background 0.8s var(--easing);
+}
+
+.experience {
+  position: absolute;
+  inset: 0;
+}
+
+/* Hide some chrome on small screens where the 3D deck is cramped */
+@media (max-width: 720px) {
+  .experience {
+    inset: 0;
+  }
+}

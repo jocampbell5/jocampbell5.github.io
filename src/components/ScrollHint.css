@@ -1,0 +1,78 @@
+.scroll-hint {
+  position: fixed;
+  left: var(--gutter);
+  bottom: clamp(1rem, 3vh, 1.8rem);
+  right: var(--gutter);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  transition: opacity 0.4s var(--easing);
+}
+
+.scroll-hint.is-hidden {
+  opacity: 0;
+}
+
+.scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.scroll-wheel {
+  width: 16px;
+  height: 26px;
+  border: 1px solid var(--text-faint);
+  border-radius: 999px;
+  position: relative;
+}
+
+.scroll-bead {
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  width: 3px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  animation: scroll-bead 1.6s var(--easing) infinite;
+}
+
+@keyframes scroll-bead {
+  0% { opacity: 0; transform: translate(-50%, 0); }
+  35% { opacity: 1; }
+  70% { opacity: 0; transform: translate(-50%, 8px); }
+  100% { opacity: 0; }
+}
+
+.scroll-count {
+  font-family: var(--serif);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.count-now {
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.count-sep,
+.count-total {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-bead {
+    animation: none;
+  }
+}
