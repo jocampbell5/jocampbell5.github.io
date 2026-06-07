@@ -17,6 +17,8 @@
    tech        array of tools/tech used (shown as tags)
    overview    longer paragraph(s) for the case study. Use \n\n for breaks.
    highlights  array of bullet points for the case study
+   links       array of { label, href } shown as buttons in the case study
+               (e.g. press features, download pages, store links)
 
    MEDIA (all optional — leave out and a colored placeholder is shown)
    ------
@@ -36,23 +38,46 @@
 
 const projects = [
   {
-    id: 'aurora',
-    title: 'Aurora',
-    category: 'Flight Simulation',
-    year: '2025',
+    id: 'nfpa',
+    title: 'NFPA Fire Simulator',
+    category: 'EV / Battery Fire Training',
+    year: '2023', // TODO: set the real launch year
     summary:
-      'A real-time flight simulator with physically-based weather, terrain streaming, and a full glass cockpit.',
-    role: 'Lead Unreal Developer',
-    tech: ['Unreal Engine 5', 'C++', 'Chaos Physics', 'World Partition', 'Niagara'],
-    overview:
-      'Aurora is a high-fidelity flight simulation built for pilot familiarization training. It streams real-world terrain at continental scale using World Partition, simulates volumetric weather, and drives a fully interactive glass cockpit.\n\nThe flight model couples a custom aerodynamics solver to Chaos for ground handling, giving believable behavior from taxi to cruise.',
-    highlights: [
-      'Continental-scale terrain streaming with no loading screens',
-      'Custom 6-DOF aerodynamics model in C++',
-      'Volumetric clouds and dynamic weather affecting handling',
-      'Interactive glass cockpit with 40+ functional instruments',
+      'A nationally-deployed Unreal Engine 5 simulator that trains firefighters to fight electric-vehicle and battery fires — cooperative multiplayer, used across North America.',
+    role: 'Lead Developer',
+    tech: [
+      'Unreal Engine 5',
+      'C++',
+      'Blueprints',
+      'Multiplayer Networking',
+      'LMS Integration',
+      'Analytics',
     ],
-    accent: '#ff3d57',
+    overview:
+      "As the lead developer, I designed and built the NFPA's New Energy Systems fire-training application in Unreal Engine 5 — an immersive simulator that teaches firefighters how to fight electric-vehicle and distributed energy resource (battery) fires.\n\nFirefighters train solo or cooperatively with up to four teammates, working through realistic emergency scenarios together. The application is integrated directly into NFPA's learning management system, giving crews one-click access and giving NFPA leadership analytics on training progress.\n\nIt is now distributed to fire departments across the United States and Canada — reaching millions of firefighters — was featured on MotorWeek's Auto World, and is free for anyone to download.",
+    highlights: [
+      'Designed and built single-handedly as the sole developer',
+      'Cooperative multiplayer for up to five firefighters',
+      'Deployed nationwide — used by fire departments across the US and Canada, reaching millions of firefighters',
+      "Integrated into NFPA's LMS with live training analytics for leadership",
+      "Featured on MotorWeek's Auto World",
+    ],
+    links: [
+      {
+        label: 'Featured on MotorWeek',
+        href: 'https://motorweek.org/auto-world/lithium-battery-fire-training/',
+      },
+      {
+        label: 'Download (free)',
+        href: 'https://info.vectorsolutions.com/vs-fr-nfpa-new-energy-systems-fire-simulator-training-confirmation?submissionGuid=bd7fb0cd-00b6-4bd2-89f6-cefa20b09da2',
+      },
+    ],
+    accent: '#ff5a36',
+    // --- Add your media: drop the files in public/media/ then uncomment ---
+    // video: '/media/nfpa.mp4',
+    // poster: '/media/nfpa-poster.jpg',
+    // image: '/media/nfpa.jpg',   // used on the card if there is no video
+    // gallery: ['/media/nfpa-1.jpg', '/media/nfpa-2.jpg'],
   },
   {
     id: 'sentinel',

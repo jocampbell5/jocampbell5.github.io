@@ -189,6 +189,39 @@
   background: var(--proj-accent);
 }
 
+.case-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: border-color 0.3s var(--easing), color 0.3s var(--easing),
+    background 0.3s var(--easing);
+}
+
+.case-link svg {
+  color: var(--proj-accent);
+  transition: transform 0.3s var(--easing);
+}
+
+.case-link:hover {
+  border-color: var(--proj-accent);
+  background: color-mix(in srgb, var(--proj-accent) 12%, transparent);
+}
+
+.case-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
 .case-aside {
   display: flex;
   flex-direction: column;

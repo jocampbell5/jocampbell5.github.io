@@ -81,6 +81,33 @@ export default function CaseStudy({ project, onClose }) {
               </ul>
             </>
           )}
+
+          {project.links?.length > 0 && (
+            <>
+              <h3 className="case-subhead">Links</h3>
+              <div className="case-links">
+                {project.links.map((l) => (
+                  <a
+                    key={l.href}
+                    className="case-link"
+                    href={l.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {l.label}
+                    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+                      <path
+                        d="M3 11L11 3M5 3h6v6"
+                        stroke="currentColor"
+                        strokeWidth="1.4"
+                        fill="none"
+                      />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
         <aside className="case-aside">
