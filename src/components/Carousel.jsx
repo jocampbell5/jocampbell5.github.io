@@ -6,28 +6,28 @@ import './Carousel.css'
 // How many cards to render on each side of the active one.
 const WINDOW = 3
 
-// Desktop gets a larger, more dramatically slanted deck; mobile keeps the
-// tighter, gentler layout that already works well on small screens.
-const DESKTOP = {
-  spacing: 200, // vertical gap between cards (px)
-  depth: 220, // how far each step recedes (px)
-  tilt: 18, // backward perspective tilt (deg) — lower = more face-on to viewer
-  skew: -3, // slight 2D rotation so cards read as tilted photos (deg)
-}
+// Three size tiers. Geometry (spacing/depth) scales up with the screen so the
+// deck stays proportional; card pixel size is handled in CSS (vw-based).
+// Mobile keeps the tighter, gentler layout that works well on small screens.
 const MOBILE = { spacing: 150, depth: 240, tilt: 34, skew: 0 }
+const DESKTOP = { spacing: 200, depth: 220, tilt: 18, skew: -3 }
+const XL = { spacing: 320, depth: 300, tilt: 18, skew: -3 } // large / 4K displays
 
-function useIsDesktop() {
-  const query = '(min-width: 721px)'
-  const [isDesktop, setIsDesktop] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia(query).matches
-  )
+// Pick the deck config from the current viewport width.
+function useDeckConfig() {
+  const pick = () => {
+    if (typeof window === 'undefined') return DESKTOP
+    if (window.matchMedia('(min-width: 2200px)').matches) return XL
+    if (window.matchMedia('(min-width: 721px)').matches) return DESKTOP
+    return MOBILE
+  }
+  const [cfg, setCfg] = useState(pick)
   useEffect(() => {
-    const mq = window.matchMedia(query)
-    const onChange = (e) => setIsDesktop(e.matches)
-    mq.addEventListener('change', onChange)
-    return () => mq.removeEventListener('change', onChange)
+    const onResize = () => setCfg(pick())
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
   }, [])
-  return isDesktop
+  return cfg
 }
 
 function transformFor(offset, cfg) {
@@ -47,7 +47,7 @@ function transformFor(offset, cfg) {
 }
 
 export default function Carousel({ projects, activeIndex, onSelect, onOpen }) {
-  const cfg = useIsDesktop() ? DESKTOP : MOBILE
+  const cfg = useDeckConfig()
   return (
     <div className="carousel" aria-roledescription="carousel">
       <div className="carousel-deck">

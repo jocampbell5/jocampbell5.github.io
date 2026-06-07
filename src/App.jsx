@@ -84,7 +84,13 @@ export default function App() {
 
   return (
     <div className="stage" style={{ '--proj-accent': active.accent }}>
-      <Header onAbout={() => setAboutOpen(true)} />
+      <Header
+        onAbout={() => setAboutOpen(true)}
+        onHome={() => {
+          setOpenId(null)
+          setAboutOpen(false)
+        }}
+      />
 
       <main className="experience">
         <HeroInfo project={active} onOpen={() => setOpenId(active.id)} />

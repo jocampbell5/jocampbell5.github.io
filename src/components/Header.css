@@ -2,11 +2,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   z-index: 40;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
   padding: clamp(1.1rem, 2.5vw, 1.8rem) var(--gutter);
   pointer-events: none;
 }
@@ -18,7 +18,9 @@
 .brand {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   line-height: 1.15;
+  text-align: left;
 }
 
 .brand-name {
@@ -26,6 +28,11 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  transition: color 0.3s var(--easing);
+}
+
+.brand:hover .brand-name {
+  color: var(--accent);
 }
 
 .brand-role {
@@ -41,15 +48,16 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 0.5rem 0.2rem;
+  padding: 0.1rem 0;
   position: relative;
+  align-self: flex-start;
 }
 
 .about-link::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0.25rem;
+  bottom: -2px;
   height: 1px;
   width: 100%;
   background: currentColor;

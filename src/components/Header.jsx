@@ -1,12 +1,12 @@
 import './Header.css'
 
-export default function Header({ onAbout }) {
+export default function Header({ onAbout, onHome }) {
   return (
     <header className="site-header">
-      <a className="brand" href="/" aria-label="John Campbell — home">
+      <button className="brand" onClick={onHome} aria-label="John Campbell — home">
         <span className="brand-name">John Campbell</span>
         <span className="brand-role">Unreal Developer</span>
-      </a>
+      </button>
 
       <button className="about-link" onClick={onAbout}>
         About
