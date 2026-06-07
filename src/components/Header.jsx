@@ -1,6 +1,6 @@
 import './Header.css'
 
-export default function Header({ onAbout, onHome }) {
+export default function Header({ onAbout, onHome, onDesign }) {
   return (
     <header className="site-header">
       <button className="brand" onClick={onHome} aria-label="John Campbell — home">
@@ -8,9 +8,17 @@ export default function Header({ onAbout, onHome }) {
         <span className="brand-role">Unreal Developer</span>
       </button>
 
-      <button className="about-link" onClick={onAbout}>
-        About
-      </button>
+      <nav className="header-nav">
+        <button className="nav-link" onClick={onHome}>
+          Work
+        </button>
+        <button className="nav-link" onClick={onDesign}>
+          Design
+        </button>
+        <button className="nav-link" onClick={onAbout}>
+          About
+        </button>
+      </nav>
     </header>
   )
 }

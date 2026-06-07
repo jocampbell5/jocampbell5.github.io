@@ -8,6 +8,7 @@ import ProjectMenu from './components/ProjectMenu'
 import ScrollHint from './components/ScrollHint'
 import CaseStudy from './components/CaseStudy'
 import About from './components/About'
+import Design from './components/Design'
 import './App.css'
 
 export default function App() {
@@ -15,12 +16,13 @@ export default function App() {
   const [activeIndex, setActiveIndex] = useState(0)
   // id of the project whose case study is open, or null.
   const [openId, setOpenId] = useState(null)
-  // Whether the About panel is open.
+  // Whether the About / Design panels are open.
   const [aboutOpen, setAboutOpen] = useState(false)
+  const [designOpen, setDesignOpen] = useState(false)
 
   // Lock so one scroll gesture / key press = one step.
   const lock = useRef(false)
-  const overlayOpen = openId !== null || aboutOpen
+  const overlayOpen = openId !== null || aboutOpen || designOpen
 
   const clamp = (i) => Math.max(0, Math.min(projects.length - 1, i))
 
@@ -50,6 +52,7 @@ export default function App() {
       if (e.key === 'Escape') {
         setOpenId(null)
         setAboutOpen(false)
+        setDesignOpen(false)
         return
       }
       if (overlayOpen) return
@@ -86,9 +89,11 @@ export default function App() {
     <div className="stage" style={{ '--proj-accent': active.accent }}>
       <Header
         onAbout={() => setAboutOpen(true)}
+        onDesign={() => setDesignOpen(true)}
         onHome={() => {
           setOpenId(null)
           setAboutOpen(false)
+          setDesignOpen(false)
         }}
       />
 
@@ -127,6 +132,10 @@ export default function App() {
 
       <AnimatePresence>
         {aboutOpen && <About onClose={() => setAboutOpen(false)} />}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {designOpen && <Design onClose={() => setDesignOpen(false)} />}
       </AnimatePresence>
     </div>
   )
