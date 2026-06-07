@@ -10,9 +10,9 @@ const WINDOW = 3
 // tighter, gentler layout that already works well on small screens.
 const DESKTOP = {
   spacing: 200, // vertical gap between cards (px)
-  depth: 300, // how far each step recedes (px)
-  tilt: 44, // backward perspective tilt (deg) — higher = more slanted
-  skew: -7, // slight 2D rotation so cards read as tilted photos (deg)
+  depth: 220, // how far each step recedes (px)
+  tilt: 18, // backward perspective tilt (deg) — lower = more face-on to viewer
+  skew: -6, // slight 2D rotation so cards read as tilted photos (deg)
 }
 const MOBILE = { spacing: 150, depth: 240, tilt: 34, skew: 0 }
 
