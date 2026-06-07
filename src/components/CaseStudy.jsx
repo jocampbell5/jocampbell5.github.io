@@ -21,21 +21,37 @@ export default function CaseStudy({ project, onClose }) {
         </svg>
       </button>
 
-      <header className="case-hero">
-        <div className="case-hero-media">
-          <Media project={project} playing showCaption={false} />
-          <span className="case-hero-scrim" />
-        </div>
-
-        <div className="case-hero-text">
-          <p className="eyebrow case-eyebrow">
-            <span style={{ color: project.accent }}>{project.category}</span>
-            <span className="hero-dot" /> {project.year}
-          </p>
-          <h2 className="case-title">{project.title}</h2>
-          <p className="case-role">{project.role}</p>
-        </div>
+      <header className="case-intro">
+        <p className="eyebrow case-eyebrow">
+          <span style={{ color: project.accent }}>{project.category}</span>
+          <span className="hero-dot" /> {project.year}
+        </p>
+        <h2 className="case-title">{project.title}</h2>
+        <p className="case-role">{project.role}</p>
       </header>
+
+      {/* The video is the star of the page — large and playable. */}
+      <div className="case-player">
+        {project.video ? (
+          <video
+            className="case-video"
+            src={project.video}
+            poster={project.poster}
+            controls
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        ) : (
+          <div className="case-video case-video--empty">
+            <Media project={project} playing showCaption={false} />
+            <span className="case-video-hint">
+              ▶ Project video goes here — add <code>video: '/media/{project.id}.mp4'</code> in projects.js
+            </span>
+          </div>
+        )}
+      </div>
 
       <div className="case-body">
         <div className="case-main">

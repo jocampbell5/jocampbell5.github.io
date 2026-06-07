@@ -1,22 +1,42 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Media from './Media'
 import './Carousel.css'
 
 // How many cards to render on each side of the active one.
 const WINDOW = 3
-// Vertical distance (px) between neighbouring cards in the stack.
-const SPACING = 150
-// How far each step recedes into the screen (px).
-const DEPTH = 240
-// Constant backward tilt that gives the 3D "deck" look.
-const TILT = 34
 
-function transformFor(offset) {
+// Desktop gets a larger, more dramatically slanted deck; mobile keeps the
+// tighter, gentler layout that already works well on small screens.
+const DESKTOP = {
+  spacing: 200, // vertical gap between cards (px)
+  depth: 300, // how far each step recedes (px)
+  tilt: 44, // backward perspective tilt (deg) — higher = more slanted
+  skew: -7, // slight 2D rotation so cards read as tilted photos (deg)
+}
+const MOBILE = { spacing: 150, depth: 240, tilt: 34, skew: 0 }
+
+function useIsDesktop() {
+  const query = '(min-width: 721px)'
+  const [isDesktop, setIsDesktop] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia(query).matches
+  )
+  useEffect(() => {
+    const mq = window.matchMedia(query)
+    const onChange = (e) => setIsDesktop(e.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
+  return isDesktop
+}
+
+function transformFor(offset, cfg) {
   const abs = Math.abs(offset)
   return {
-    y: offset * SPACING,
-    z: -abs * DEPTH,
-    rotateX: TILT,
+    y: offset * cfg.spacing,
+    z: -abs * cfg.depth,
+    rotateX: cfg.tilt,
+    rotateZ: cfg.skew,
     opacity: abs > WINDOW ? 0 : Math.max(0, 1 - abs * 0.26),
     // Active card is full colour; the rest are dimmed + desaturated.
     filter:
@@ -27,6 +47,7 @@ function transformFor(offset) {
 }
 
 export default function Carousel({ projects, activeIndex, onSelect, onOpen }) {
+  const cfg = useIsDesktop() ? DESKTOP : MOBILE
   return (
     <div className="carousel" aria-roledescription="carousel">
       <div className="carousel-deck">
@@ -34,7 +55,7 @@ export default function Carousel({ projects, activeIndex, onSelect, onOpen }) {
           const offset = i - activeIndex
           if (Math.abs(offset) > WINDOW) return null
           const isActive = offset === 0
-          const t = transformFor(offset)
+          const t = transformFor(offset, cfg)
 
           return (
             <motion.button

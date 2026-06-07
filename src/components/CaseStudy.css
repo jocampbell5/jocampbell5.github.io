@@ -30,35 +30,11 @@
   border-color: var(--proj-accent);
 }
 
-/* ---- Hero ---- */
-.case-hero {
-  position: relative;
-  height: min(78vh, 760px);
-  display: flex;
-  align-items: flex-end;
-}
-
-.case-hero-media {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.case-hero-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    var(--bg) 2%,
-    rgba(8, 8, 10, 0.35) 45%,
-    rgba(8, 8, 10, 0.15) 100%
-  );
-}
-
-.case-hero-text {
-  position: relative;
-  padding: var(--gutter);
-  padding-bottom: clamp(2rem, 5vw, 4rem);
+/* ---- Intro (text header) ---- */
+.case-intro {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(5rem, 12vh, 8rem) var(--gutter) clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .case-eyebrow {
@@ -71,7 +47,7 @@
 .case-title {
   font-family: var(--serif);
   font-weight: 800;
-  font-size: clamp(3rem, 11vw, 9rem);
+  font-size: clamp(2.6rem, 8vw, 6.5rem);
   line-height: 0.9;
   letter-spacing: -0.01em;
 }
@@ -81,6 +57,53 @@
   color: var(--text-dim);
   font-size: 0.95rem;
   letter-spacing: 0.04em;
+}
+
+/* ---- Video player (the centrepiece) ---- */
+.case-player {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.case-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  object-fit: cover;
+  box-shadow:
+    0 50px 100px -30px rgba(0, 0, 0, 0.9),
+    0 0 0 1px color-mix(in srgb, var(--proj-accent) 35%, transparent),
+    0 0 80px -20px color-mix(in srgb, var(--proj-accent) 40%, transparent);
+}
+
+.case-video--empty {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-video-hint {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+
+.case-video-hint code {
+  font-size: 0.78em;
+  color: var(--proj-accent);
 }
 
 /* ---- Body ---- */

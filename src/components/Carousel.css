@@ -3,9 +3,9 @@
   inset: 0;
   /* Horizontal centre of the deck. Pushed right on desktop so the
      hero text on the left has room; centred on smaller screens. */
-  --deck-x: 56%;
-  perspective: 1600px;
-  perspective-origin: var(--deck-x) 42%;
+  --deck-x: 60%;
+  perspective: 1700px;
+  perspective-origin: var(--deck-x) 44%;
   z-index: 10;
 }
 
@@ -23,7 +23,7 @@
   /* centre each card on the deck origin without touching `transform`,
      which framer-motion drives for the 3D animation */
   translate: -50% -50%;
-  width: clamp(280px, 42vw, 620px);
+  width: clamp(280px, 52vw, 900px);
   aspect-ratio: 16 / 9;
   transform-style: preserve-3d;
   will-change: transform, opacity, filter;
