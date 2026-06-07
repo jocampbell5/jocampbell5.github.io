@@ -126,7 +126,7 @@ const projects = [
       'Built as a client proposal at GHD',
     ],
     accent: '#8b7cff',
-    // youtube: 'https://youtu.be/XXXXXXXXXXX',  // paste link after upload
+    youtube: 'https://youtu.be/-_boofFqano',
   },
   {
     id: 'atlas',
