@@ -79,28 +79,54 @@ const projects = [
       },
     ],
     accent: '#ff5a36',
-    // --- Add your media: paste the YouTube link here (card thumbnail + player) ---
-    // youtube: 'https://youtu.be/XXXXXXXXXXX',
-    // gallery: ['/media/nfpa-1.jpg', '/media/nfpa-2.jpg'],  // optional extra stills
+    youtube: 'https://youtu.be/rotu0dtGYXs',
   },
   {
-    id: 'sentinel',
-    title: 'Sentinel',
-    category: 'VR Safety Training',
-    year: '2024',
+    id: 'c130',
+    title: 'C-130 VR Trainer',
+    category: 'VR Training · U.S. Air Force',
+    year: '2019–2021',
     summary:
-      'Immersive VR training that puts workers inside hazardous scenarios — safely — and scores their response.',
-    role: 'Unreal / VR Developer',
-    tech: ['Unreal Engine 5', 'OpenXR', 'Blueprints', 'C++', 'Meta Quest'],
+      "VR training modules for the U.S. Air Force's 16th Training Squadron — interactive aircraft procedures, checklists, and documentation in immersive VR.",
+    role: 'Senior Unreal Engine Developer · Leidos',
+    tech: ['Unreal Engine', 'C++', 'Blueprints', 'SteamVR / OpenXR', 'Perforce', 'Azure DevOps'],
     overview:
-      'Sentinel teaches industrial safety through consequence-free practice. Trainees enter a faithfully reconstructed plant floor and must identify hazards, follow lockout/tagout procedures, and respond to emergencies.\n\nEvery action is logged and scored, producing a competency report for supervisors.',
+      "At Leidos, I developed virtual-reality training modules for the U.S. Air Force's 16th Training Squadron using Unreal Engine, C++, and Blueprints.\n\nTrainees work through aircraft procedures in immersive VR — interactive checklists, technical documents, and step-by-step controller-guided tasks rendered around a full-scale C-130.\n\nBeyond feature work, I built and maintained automated build-and-test pipelines with Perforce and Azure DevOps, enforced coding standards and configuration management, and mentored mid- and junior-level developers in best practices.",
     highlights: [
-      'Hand-tracked interactions with realistic tool use',
-      'Branching scenarios that adapt to trainee decisions',
-      'Automatic scoring and exportable competency reports',
-      'Runs untethered on Meta Quest 3',
+      "Built VR training modules for the U.S. Air Force's 16th Training Squadron",
+      'Immersive full-scale aircraft procedures with interactive UI and documents',
+      'Set up automated build & test pipelines (Perforce, Azure DevOps)',
+      'Mentored mid- and junior-level developers and owned coding standards',
     ],
-    accent: '#ffb648',
+    accent: '#4ea1ff',
+    // youtube: 'https://youtu.be/XXXXXXXXXXX',  // paste link after upload
+  },
+  {
+    id: 'ava',
+    title: 'AI Avatar',
+    category: 'Conversational AI',
+    year: '2023',
+    summary:
+      'A real-time conversational AI avatar in Unreal Engine — ask a question by voice and a photoreal human answers, with live speech, voice, and facial animation.',
+    role: 'AI / Unreal Developer · GHD',
+    tech: [
+      'Unreal Engine 5',
+      'MetaHuman',
+      'ChatGPT API',
+      'ElevenLabs',
+      'NVIDIA Omniverse',
+      'Whisper',
+    ],
+    overview:
+      "Built at GHD as a client proposal, this is a real-time AI avatar in Unreal Engine that helps learners build knowledge in a subject simply by talking to it.\n\nIt chains several AI services live: the user speaks, Whisper transcribes the audio to text, ChatGPT generates a response, ElevenLabs converts that response into a natural voice, and NVIDIA Omniverse drives lip-sync facial animation from the audio. The learner reads the reply on screen, hears the avatar speak, and watches its lips move in sync — all generated on the fly.\n\nIt's a demonstration of integrating multiple AI APIs into one cohesive, real-time experience for the end user.",
+    highlights: [
+      'Real-time pipeline: speech → Whisper → ChatGPT → ElevenLabs → Omniverse lip-sync',
+      'Photoreal MetaHuman avatar with live voice and facial animation',
+      'Custom voice and on-the-fly answers for any subject',
+      'Built as a client proposal at GHD',
+    ],
+    accent: '#8b7cff',
+    // youtube: 'https://youtu.be/XXXXXXXXXXX',  // paste link after upload
   },
   {
     id: 'atlas',
@@ -120,25 +146,6 @@ const projects = [
       'Web dashboard mirrored to the 3D scene',
     ],
     accent: '#3ddc97',
-  },
-  {
-    id: 'oracle',
-    title: 'Oracle',
-    category: 'AI Assistant',
-    year: '2025',
-    summary:
-      'An in-world AI helper that guides users through complex procedures using natural conversation.',
-    role: 'AI Integration Developer',
-    tech: ['Unreal Engine 5', 'C++', 'LLM API', 'Speech-to-Text', 'MetaHuman'],
-    overview:
-      'Oracle is a conversational assistant embedded inside simulations. Users speak naturally and a MetaHuman guide responds with context-aware help, pointing to objects and demonstrating steps.\n\nIt connects a large language model to the live scene graph so answers reflect the actual state of the world around the user.',
-    highlights: [
-      'Real-time speech-to-text and text-to-speech',
-      'LLM grounded in the live scene state',
-      'Expressive MetaHuman presenter with lip-sync',
-      'Context-aware highlighting of relevant objects',
-    ],
-    accent: '#7c8cff',
   },
   {
     id: 'forge',
