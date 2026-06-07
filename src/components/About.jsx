@@ -6,19 +6,21 @@ const SKILLS = [
   'Unreal Engine 5',
   'C++',
   'Blueprints',
+  'Python',
   'VR / OpenXR',
   'Simulation',
   'Digital Twins',
+  'Computer Vision',
+  'Synthetic Data',
   'AI Integration',
   'MetaHuman',
-  'Niagara',
   'Real-time Graphics',
 ]
 
 const LINKS = [
   { label: 'Email', href: 'mailto:johncampbell5050@gmail.com' },
-  { label: 'GitHub', href: 'https://github.com/' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
+  { label: 'GitHub', href: 'https://github.com/jocampbell5/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/john-campbell-0530b230/' },
 ]
 
 export default function About({ onClose }) {
@@ -54,15 +56,21 @@ export default function About({ onClose }) {
           <div className="about-bio">
             <p>
               I’m John Campbell, an Unreal Engine developer specialising in
-              simulations, VR training, AI helpers, and digital twins. I turn
-              complex systems into interactive experiences people can step inside,
-              understand, and learn from.
+              simulations, VR training, AI helpers, digital twins, and computer
+              vision. I turn complex systems into interactive experiences people
+              can step inside, understand, and learn from.
             </p>
             <p>
               From physically-based flight sims to live factory twins and
               conversational AI characters, my work sits where real-time graphics,
               engineering, and human interaction meet — built to be both
               technically rigorous and genuinely enjoyable to use.
+            </p>
+            <p>
+              I also use Unreal as a synthetic-data engine for computer vision:
+              generating labelled images and video at scale, auto-exporting the
+              annotations, and feeding them straight into model training — so teams
+              can build vision models without the cost of hand-collected data.
             </p>
           </div>
 

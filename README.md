@@ -14,6 +14,7 @@ inside, understand, and learn from.
 - **VR Training** — immersive, consequence-free practice with scoring and reporting
 - **Digital Twins** — live 3D mirrors of real facilities, driven by sensor data
 - **AI Helpers** — conversational, context-aware assistants and characters in-world
+- **Computer Vision** — Unreal as a synthetic-data engine: labelled images/video at scale for model training
 
 **Core stack:** Unreal Engine 5 · C++ · Blueprints · OpenXR / VR · Niagara ·
 MetaHuman · real-time graphics
