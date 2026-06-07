@@ -18,7 +18,7 @@ function useDeckConfig() {
   const pick = () => {
     if (typeof window === 'undefined') return DESKTOP
     if (window.matchMedia('(min-width: 2200px)').matches) return XL
-    if (window.matchMedia('(min-width: 721px)').matches) return DESKTOP
+    if (window.matchMedia('(min-width: 900px)').matches) return DESKTOP
     return MOBILE
   }
   const [cfg, setCfg] = useState(pick)

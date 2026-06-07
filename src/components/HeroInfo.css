@@ -67,26 +67,14 @@
   transform: translateX(6px);
 }
 
-@media (max-width: 900px) {
+/* Narrow screens use the centred "mobile" hero with a scrim behind the title.
+   Matches the 900px line where the deck switches to its mobile config. */
+@media (max-width: 899px) {
   .hero-info {
     left: 0;
     right: 0;
     max-width: none;
     text-align: center;
-    padding: 0 var(--gutter);
-    bottom: 8vh;
-  }
-  .hero-eyebrow {
-    justify-content: center;
-  }
-  .hero-summary {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 720px) {
-  .hero-info {
     bottom: 0;
     padding: 5rem var(--gutter) 4.5rem;
     /* scrim so the title stays legible over the deck behind it */
@@ -97,7 +85,14 @@
       transparent 100%
     );
   }
+  .hero-eyebrow {
+    justify-content: center;
+  }
+  .hero-summary {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .hero-title {
-    font-size: clamp(2.6rem, 14vw, 4rem);
+    font-size: clamp(2.6rem, 9vw, 4.5rem);
   }
 }
