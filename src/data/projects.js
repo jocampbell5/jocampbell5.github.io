@@ -47,7 +47,7 @@ const projects = [
     id: 'nfpa',
     title: 'NFPA Fire Simulator',
     category: 'EV / Battery Fire Training',
-    year: '2023',
+    year: '2022–2023',
     summary:
       'A nationally-deployed Unreal Engine 5 simulator that trains firefighters to fight electric-vehicle and battery fires — cooperative multiplayer, used across North America.',
     role: 'Lead Developer',
