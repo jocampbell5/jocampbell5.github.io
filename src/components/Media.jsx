@@ -1,9 +1,10 @@
+import { getYouTubeId, youTubeThumb, youTubeThumbFallback } from '../utils/youtube'
 import './Media.css'
 
 /**
- * Renders a project's visual.
- *  - if `video` is set -> looping muted video (with optional poster)
- *  - else if `image` is set -> still image
+ * Renders a project's visual (used on the deck cards).
+ *  - if `video` is set -> looping muted local video (with optional poster)
+ *  - else if `image` or a `youtube` thumbnail is available -> still image
  *  - else -> a generated colored placeholder so the layout looks complete
  */
 export default function Media({
@@ -12,7 +13,10 @@ export default function Media({
   className = '',
   showCaption = true,
 }) {
-  const { video, image, poster, title, category, accent } = project
+  const { video, poster, title, category, accent } = project
+  const ytId = getYouTubeId(project.youtube)
+  // Prefer an explicit image; otherwise fall back to the YouTube thumbnail.
+  const image = project.image || (ytId ? youTubeThumb(ytId) : null)
 
   if (video) {
     return (
@@ -30,7 +34,19 @@ export default function Media({
 
   if (image) {
     return (
-      <img className={`media ${className}`} src={image} alt={title} loading="lazy" />
+      <img
+        className={`media ${className}`}
+        src={image}
+        alt={title}
+        loading="lazy"
+        onError={(e) => {
+          // maxres thumbnails don't exist for every video — fall back.
+          if (ytId && !e.currentTarget.dataset.fallback) {
+            e.currentTarget.dataset.fallback = '1'
+            e.currentTarget.src = youTubeThumbFallback(ytId)
+          }
+        }}
+      />
     )
   }
 

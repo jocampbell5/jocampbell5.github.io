@@ -22,9 +22,15 @@
 
    MEDIA (all optional — leave out and a colored placeholder is shown)
    ------
+   youtube     a YouTube link (or id). The case study embeds the player; the
+               deck card shows the video's thumbnail automatically.
+               e.g. youtube: 'https://youtu.be/ABC123xyz00'
    image       path to a still image for the card, e.g. '/media/aurora.jpg'
-   video       path to a video file, e.g. '/media/aurora.mp4'  (loops on the card)
-   poster      image shown before the video loads
+               (overrides the YouTube thumbnail on the card if both are set)
+   video       a LOCAL video file, e.g. '/media/aurora.mp4' (loops on the card).
+               Use this only for short clips you commit; prefer `youtube` for
+               anything substantial.
+   poster      image shown before a local video loads
    gallery     array of image paths shown in the case study
 
    HOW TO ADD YOUR OWN MEDIA
@@ -73,11 +79,9 @@ const projects = [
       },
     ],
     accent: '#ff5a36',
-    // --- Add your media: drop the files in public/media/ then uncomment ---
-    // video: '/media/nfpa.mp4',
-    // poster: '/media/nfpa-poster.jpg',
-    // image: '/media/nfpa.jpg',   // used on the card if there is no video
-    // gallery: ['/media/nfpa-1.jpg', '/media/nfpa-2.jpg'],
+    // --- Add your media: paste the YouTube link here (card thumbnail + player) ---
+    // youtube: 'https://youtu.be/XXXXXXXXXXX',
+    // gallery: ['/media/nfpa-1.jpg', '/media/nfpa-2.jpg'],  // optional extra stills
   },
   {
     id: 'sentinel',
