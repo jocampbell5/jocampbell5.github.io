@@ -26,9 +26,9 @@ const img = (name, caption, ext = 'jpg') => ({
 const designs = [
   {
     id: 'nfpa',
-    title: 'NFPA EV Fire Training',
+    title: 'NFPA EV Fire Training — Vehicle Simulator',
     blurb:
-      'Proposal art and storyboards for the NFPA electric-vehicle / battery fire training application.',
+      'UI and storyboards for the multiplayer electric-vehicle / battery fire training simulator.',
     images: [
       img('nfpa-panels', 'UI panels & scenario flow'),
       img('nfpa-storyboard', 'Storyboard'),
@@ -36,9 +36,9 @@ const designs = [
   },
   {
     id: 'ev-storyline',
-    title: 'EV Fire Training — Storyline & Art',
+    title: 'NFPA EV Fire — Micro-Learning (Storyline 360)',
     blurb:
-      'Character and scene illustrations and storyline layouts for the EV fire training experience.',
+      'Storyboards, character art, and screen layouts for the iPad micro-learning built in Articulate Storyline 360.',
     images: [
       img('ev-template', 'Storyline module layout'),
       img('ev-instructor', 'Instructor character', 'png'),
@@ -67,20 +67,20 @@ const designs = [
   },
   {
     id: 'battery',
-    title: 'Battery Energy Storage Training',
-    blurb: 'Concept design for a battery energy-storage-station (BESS) training environment.',
+    title: 'Battery Storage Station Familiarization Training (BSSFT)',
+    blurb:
+      'UI, environments, and fire scenarios for a battery-storage / distributed-energy fire familiarization training.',
     images: [
-      img('battery-1', 'Concept 1'),
-      img('battery-2', 'Concept 2'),
-      img('battery-3', 'Concept 3'),
-      img('battery-ff6', 'Environment study 6'),
-      img('battery-ff7', 'Environment study 7'),
-      img('battery-ff8', 'Environment study 8'),
-      img('battery-ff9', 'Environment study 9'),
-      img('battery-ff10', 'Environment study 10'),
-      img('battery-ff11', 'Environment study 11'),
-      img('battery-ff12', 'Environment study 12'),
-      img('battery-ff13', 'Environment study 13'),
+      img('battery-1', 'Main menu'),
+      img('battery-2', 'Battery storage station — information hotspot'),
+      img('battery-3', 'Battery storage station — environment'),
+      img('battery-ff7', 'Battery storage station — interactive hotspot'),
+      img('battery-ff8', 'Battery storage station — thermal event'),
+      img('battery-ff9', 'Residential EV — driveway scenario'),
+      img('battery-ff10', 'Residential EV — fire scenario'),
+      img('battery-ff11', 'Home solar & battery — garage'),
+      img('battery-ff12', 'Home battery — fire scenario'),
+      img('battery-ff13', 'Residential electrical disconnect & meter'),
     ],
   },
   {
