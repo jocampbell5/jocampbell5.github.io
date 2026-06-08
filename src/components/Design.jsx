@@ -1,11 +1,47 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import designs from '../data/designs'
 import './Design.css'
 
 export default function Design({ onClose }) {
-  // src of the image shown enlarged in the lightbox, or null.
+  // Lightbox state: which collection's images and the active index, or null.
   const [lightbox, setLightbox] = useState(null)
+  const boxRef = useRef(null)
+
+  const open = (images, index) => setLightbox({ images, index })
+  const close = () => setLightbox(null)
+  const nav = (dir) =>
+    setLightbox((lb) =>
+      lb ? { ...lb, index: (lb.index + dir + lb.images.length) % lb.images.length } : lb
+    )
+
+  // Keyboard: arrows navigate, Escape closes the lightbox. Capture phase +
+  // stopPropagation so this runs before (and instead of) the app's global
+  // Escape handler while the lightbox is open.
+  useEffect(() => {
+    const onKey = (e) => {
+      if (!lightbox) return
+      if (e.key === 'Escape') {
+        e.stopPropagation()
+        close()
+      } else if (e.key === 'ArrowRight') {
+        e.stopPropagation()
+        nav(1)
+      } else if (e.key === 'ArrowLeft') {
+        e.stopPropagation()
+        nav(-1)
+      }
+    }
+    window.addEventListener('keydown', onKey, true)
+    return () => window.removeEventListener('keydown', onKey, true)
+  }, [lightbox])
+
+  // Scroll back to the top when the active image changes (tall storyboards).
+  useEffect(() => {
+    if (boxRef.current) boxRef.current.scrollTop = 0
+  }, [lightbox?.index])
+
+  const current = lightbox ? lightbox.images[lightbox.index] : null
 
   return (
     <motion.div
@@ -42,16 +78,16 @@ export default function Design({ onClose }) {
                 collection.layout === 'uniform' ? 'design-grid--uniform' : ''
               }`}
             >
-              {collection.images.map((img) => (
-                <figure className="design-figure" key={img.src}>
+              {collection.images.map((image, i) => (
+                <figure className="design-figure" key={image.src}>
                   <button
                     className="design-thumb"
-                    onClick={() => setLightbox(img.full || img.src)}
-                    aria-label={`Enlarge: ${img.caption}`}
+                    onClick={() => open(collection.images, i)}
+                    aria-label={`Enlarge: ${image.caption}`}
                   >
-                    <img src={img.src} alt={img.caption} loading="lazy" />
+                    <img src={image.src} alt={image.caption} loading="lazy" />
                   </button>
-                  {img.caption && <figcaption>{img.caption}</figcaption>}
+                  {image.caption && <figcaption>{image.caption}</figcaption>}
                 </figure>
               ))}
             </div>
@@ -59,19 +95,55 @@ export default function Design({ onClose }) {
         ))}
       </div>
 
-      {lightbox && (
+      {current && (
         <div
           className="design-lightbox"
-          onClick={() => setLightbox(null)}
+          ref={boxRef}
+          onClick={close}
           role="dialog"
           aria-modal="true"
         >
-          <button className="lightbox-close" aria-label="Close image">
+          <button className="lightbox-btn lightbox-close" onClick={(e) => (e.stopPropagation(), close())} aria-label="Back to gallery">
             <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
               <path d="M3 3l16 16M19 3L3 19" stroke="currentColor" strokeWidth="1.6" />
             </svg>
           </button>
-          <img src={lightbox} alt="" onClick={(e) => e.stopPropagation()} />
+
+          {lightbox.images.length > 1 && (
+            <>
+              <button
+                className="lightbox-btn lightbox-prev"
+                onClick={(e) => (e.stopPropagation(), nav(-1))}
+                aria-label="Previous image"
+              >
+                <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+                  <path d="M16 4L7 13l9 9" stroke="currentColor" strokeWidth="2" fill="none" />
+                </svg>
+              </button>
+              <button
+                className="lightbox-btn lightbox-next"
+                onClick={(e) => (e.stopPropagation(), nav(1))}
+                aria-label="Next image"
+              >
+                <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+                  <path d="M10 4l9 9-9 9" stroke="currentColor" strokeWidth="2" fill="none" />
+                </svg>
+              </button>
+            </>
+          )}
+
+          <figure className="lightbox-figure" onClick={(e) => e.stopPropagation()}>
+            <img src={current.full || current.src} alt={current.caption} />
+          </figure>
+
+          <div className="lightbox-caption" onClick={(e) => e.stopPropagation()}>
+            <span>{current.caption}</span>
+            {lightbox.images.length > 1 && (
+              <span className="lightbox-count">
+                {lightbox.index + 1} / {lightbox.images.length}
+              </span>
+            )}
+          </div>
         </div>
       )}
     </motion.div>

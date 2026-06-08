@@ -151,32 +151,89 @@
   position: fixed;
   inset: 0;
   z-index: 20;
-  background: rgba(4, 4, 6, 0.92);
+  background: rgba(4, 4, 6, 0.94);
   backdrop-filter: blur(6px);
   display: flex;
-  align-items: center;
+  align-items: safe center; /* centre when it fits; top-align + scroll when tall */
   justify-content: center;
-  padding: clamp(1.5rem, 5vw, 4rem);
+  overflow: auto; /* tall storyboards scroll instead of shrinking */
+  padding: clamp(1.5rem, 4vw, 3.5rem);
   cursor: zoom-out;
 }
 
-.design-lightbox img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 8px;
-  box-shadow: 0 40px 90px -20px rgba(0, 0, 0, 0.8);
+.lightbox-figure {
+  margin: 0 auto;
   cursor: default;
 }
 
-.lightbox-close {
-  position: fixed;
-  top: clamp(1.1rem, 2.5vw, 1.8rem);
-  right: var(--gutter);
-  color: var(--text);
-  opacity: 0.8;
-  transition: opacity 0.3s var(--easing);
+.design-lightbox img {
+  display: block;
+  width: auto;
+  max-width: 100%; /* fit width; full native height -> page scrolls */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 40px 90px -20px rgba(0, 0, 0, 0.8);
 }
 
-.lightbox-close:hover {
-  opacity: 1;
+/* Shared round control buttons (close + prev/next), pinned to the viewport */
+.lightbox-btn {
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s var(--easing), background 0.3s var(--easing);
+}
+
+.lightbox-btn:hover {
+  border-color: var(--accent);
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.lightbox-close {
+  top: clamp(1.1rem, 2.5vw, 1.8rem);
+  right: var(--gutter);
+}
+
+.lightbox-prev {
+  left: clamp(0.75rem, 2vw, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: clamp(0.75rem, 2vw, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-caption {
+  position: fixed;
+  bottom: clamp(1rem, 2.5vw, 1.6rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 90vw;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
+.lightbox-count {
+  font-family: var(--serif);
+  color: var(--text-faint);
 }
