@@ -3,17 +3,21 @@ import './About.css'
 
 // ---- Edit your bio, skills, and links here ----
 const SKILLS = [
-  'Unreal Engine 5',
   'C++',
-  'Blueprints',
   'Python',
+  'C#',
+  'JavaScript',
+  'Unreal Engine 5',
+  'Blueprints',
+  'UI/UX Design',
   'VR / OpenXR',
   'Simulation',
   'Digital Twins',
   'Computer Vision',
   'Synthetic Data',
-  'AI Integration',
+  'Storyline 360',
   'MetaHuman',
+  'AI Integration',
   'Real-time Graphics',
 ]
 
@@ -68,17 +72,24 @@ export default function About({ onClose }) {
               can build vision models without the cost of hand-collected data.
             </p>
             <p>
-              I’m John Campbell, a Senior Software Developer specialising in
-              simulations, VR training, digital twins, and computer vision in
-              Unreal Engine. I turn complex systems into interactive experiences
-              people can step inside, understand, and learn from.
+              I’m John Campbell, a Senior Software Engineer specialising in
+              Unreal Engine — simulations, VR training, digital twins, and
+              computer vision. C++ is my primary language, with Python for the
+              pipelines and tooling around the app, plus C#, JavaScript, and
+              e-learning platforms like Articulate Storyline 360 to build
+              everything an application needs end to end.
             </p>
             <p>
-              Highly skilled in Unreal Engine, C++, and a range of programming
-              languages, I’m dedicated to creating innovative software solutions
-              and providing technical leadership — and I’m seeking a challenging
-              role in a dynamic organization where I can drive software-development
-              projects to success.
+              Designing the UI/UX is my favourite part of the work. I love
+              shaping how people see, understand, and interact with these
+              real-time systems — turning complex tools into interfaces that feel
+              clear and effortless.
+            </p>
+            <p>
+              Dedicated to creating innovative software solutions and providing
+              technical leadership, I’m seeking a challenging role in a dynamic
+              organization where I can drive software-development projects to
+              success.
             </p>
           </div>
 

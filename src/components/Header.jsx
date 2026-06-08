@@ -5,7 +5,7 @@ export default function Header({ onAbout, onHome, onDesign }) {
     <header className="site-header">
       <button className="brand" onClick={onHome} aria-label="John Campbell — home">
         <span className="brand-name">John Campbell</span>
-        <span className="brand-role">Unreal Developer</span>
+        <span className="brand-role">Senior Software Engineer</span>
       </button>
 
       <nav className="header-nav">

@@ -1,8 +1,8 @@
-# John Campbell — Unreal Engine Developer
+# John Campbell — Senior Software Engineer
 
-Real-time **simulations, VR training, AI helpers, and digital twins** built in
-Unreal Engine. I turn complex systems into interactive experiences people can step
-inside, understand, and learn from.
+Real-time **simulations, VR training, digital twins, computer vision, and UI/UX
+design** built in Unreal Engine. I turn complex systems into interactive
+experiences people can step inside, understand, and learn from.
 
 ### 🔗 Live portfolio → **https://jocampbell5.github.io**
 
@@ -10,14 +10,14 @@ inside, understand, and learn from.
 
 ## What I do
 
+- **UI/UX design** — designing how people see and interact with real-time apps (my favorite part)
 - **Simulation** — physically-based real-time simulators (flight, industrial, training)
 - **VR Training** — immersive, consequence-free practice with scoring and reporting
 - **Digital Twins** — live 3D mirrors of real facilities, driven by sensor data
-- **AI Helpers** — conversational, context-aware assistants and characters in-world
 - **Computer Vision** — Unreal as a synthetic-data engine: labelled images/video at scale for model training
 
-**Core stack:** Unreal Engine 5 · C++ · Blueprints · OpenXR / VR · Niagara ·
-MetaHuman · real-time graphics
+**Core stack:** C++ (primary) · Python · C# · JavaScript · Unreal Engine 5 ·
+Blueprints · UI/UX · OpenXR / VR · MetaHuman · Articulate Storyline 360
 
 ## Selected work
 
