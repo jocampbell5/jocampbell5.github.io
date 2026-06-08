@@ -182,7 +182,7 @@ const projects = [
     category: 'Game Content Creation',
     year: 'Ongoing',
     summary:
-      'Designed 200+ missions for IL-2 Sturmovik: Great Battles — plus maps and missions across Arma 3, Prepar3D, Counter-Strike, MechWarrior 5, and StarCraft 2 — and taught it in a 43-part tutorial series.',
+      'Designed missions for IL-2 Sturmovik: Great Battles — with a tutorial series teaching others how — plus maps and missions across Arma 3, Prepar3D, Counter-Strike, MechWarrior 5, and StarCraft 2.',
     role: 'Level & Mission Designer',
     tech: [
       'IL-2 Great Battles',
@@ -193,9 +193,9 @@ const projects = [
       'StarCraft 2',
     ],
     overview:
-      'Outside of engine work, I’ve spent years designing game content. In IL-2 Sturmovik: Great Battles I’ve built 200+ missions with the in-game editor, and I’ve created maps and missions across many other titles — Arma 3, Prepar3D, Counter-Strike, MechWarrior 5: Mercenaries, StarCraft 2, and more.\n\nTo help other creators, I produced a 43-part video tutorial series walking through how to build missions like mine in IL-2 Great Battles — from setup to the scripting that makes a mission come alive.',
+      'Outside of engine work, I’ve spent years designing game content. In IL-2 Sturmovik: Great Battles I’ve built a large library of missions with the in-game editor, and I’ve created maps and missions across many other titles — Arma 3, Prepar3D, Counter-Strike, MechWarrior 5: Mercenaries, StarCraft 2, and more.\n\nTo help other creators, I produced a 43-part video tutorial series walking through how to build missions like mine in IL-2 Great Battles — from setup to the scripting that makes a mission come alive.',
     highlights: [
-      '200+ missions designed for IL-2 Sturmovik: Great Battles',
+      'Designed a large library of missions for IL-2 Sturmovik: Great Battles',
       'Maps & missions across Arma 3, Prepar3D, Counter-Strike, MechWarrior 5, and StarCraft 2',
       '43-part tutorial series teaching IL-2 mission design',
       'Fluent in a wide range of level / mission editors',
