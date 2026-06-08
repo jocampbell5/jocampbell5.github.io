@@ -32,6 +32,13 @@ export default function About({ onClose }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35 }}
     >
+      <button className="about-back" onClick={onClose} aria-label="Back to work">
+        <svg width="22" height="10" viewBox="0 0 22 10" fill="none" aria-hidden="true">
+          <path d="M22 5H2M6 1L2 5l4 4" stroke="currentColor" strokeWidth="1.4" />
+        </svg>
+        <span>Back to work</span>
+      </button>
+
       <button className="about-close" onClick={onClose} aria-label="Close about">
         <span>Close</span>
         <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
@@ -76,6 +83,13 @@ export default function About({ onClose }) {
           </div>
 
           <div className="about-side">
+            <img
+              className="about-photo"
+              src="/about/john.jpg"
+              alt="John Campbell"
+              loading="lazy"
+            />
+
             <h3 className="about-subhead">Capabilities</h3>
             <ul className="about-skills">
               {SKILLS.map((s) => (
