@@ -182,7 +182,7 @@ const projects = [
     category: 'Game Content Creation',
     year: 'Ongoing',
     summary:
-      'Designed missions for IL-2 Sturmovik: Great Battles — with a tutorial series teaching others how — plus maps and missions across Arma 3, Prepar3D, Counter-Strike, MechWarrior 5, and StarCraft 2.',
+      'Designed missions for IL-2 Sturmovik: Great Battles, with a tutorial series teaching others how.',
     role: 'Level & Mission Designer',
     tech: [
       'IL-2 Great Battles',
