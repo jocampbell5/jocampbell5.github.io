@@ -102,6 +102,27 @@ const projects = [
     youtube: 'https://youtu.be/qg6_NLB_LHs',
   },
   {
+    id: 'aboutgolf',
+    title: 'aboutGOLF Simulator',
+    category: 'AR/XR · Unreal Engine 5',
+    year: '2021–2023',
+    summary:
+      'An AR/XR golf simulator in Unreal Engine 5 for indoor golf centers — hardware swing tracking, real ball physics, and custom in-engine tools that helped artists work faster.',
+    role: 'Senior Unreal Engine Developer · aboutGOLF',
+    tech: ['Unreal Engine 5', 'C++', '3Trak Tracking', 'AR / XR', 'Physics', 'Editor Tools'],
+    overview:
+      'At aboutGOLF I developed an AR/XR golf-simulation application in Unreal Engine 5 for indoor golf centers — including Premier Indoor Golf, State of Golf, The Back 9 Parlor, and the PGA.\n\nI integrated the 3Trak camera-tracking system with Unreal through its API and C++, transforming captured swing and ball-hit data into realistic physics for the virtual ball. I also led key UI work: the main menu, pause menu, live ball-data display, and a post-shot feedback system that gives players performance insights after every hit.\n\nThe video here shows another side of the role — custom in-engine tools I built to help our artists create better art, faster. Alongside new development I maintained legacy applications, fixing bugs, patching vulnerabilities, and optimizing performance.',
+    highlights: [
+      'AR/XR golf simulator in UE5, deployed to indoor golf centers (incl. the PGA)',
+      '3Trak camera tracking integrated via API + C++ into real ball physics',
+      'Designed core UI: main menu, pause, live ball data, and post-shot feedback',
+      'Built custom in-engine tools to speed up the art team (shown in the video)',
+      'Maintained legacy apps — bug fixes, security, and performance',
+    ],
+    accent: '#d9a441',
+    youtube: 'FUqpC23qFTM',
+  },
+  {
     id: 'ava',
     title: 'AI Avatar',
     category: 'Conversational AI',
@@ -132,15 +153,15 @@ const projects = [
     id: 'teaching',
     title: 'Teaching — Unreal Game Dev',
     category: 'Education · Unreal Engine',
-    year: 'Multi-year', // TODO: set the exact years you taught
+    year: '2016–2024',
     summary:
-      'A full college term teaching Unreal Engine game development — from engine fundamentals to building a puzzle game and a racing game, recorded as a public lecture series.',
-    role: 'Professor / Instructor',
+      'Nearly eight years as an adjunct professor teaching Unreal Engine game development — including a full term recorded as a public lecture series (fundamentals → puzzle game → racing game).',
+    role: 'Adjunct Professor · Northwest Vista College',
     tech: ['Unreal Engine', 'Blueprints', 'C++', 'Game Design', 'Curriculum'],
     overview:
-      'For several years I taught game development as a professor, using Unreal Engine as the teaching platform. This playlist captures one full classroom term: starting with the fundamentals of the level and Blueprint editors, then building a complete puzzle game, and finally a racing game.\n\nBeyond the technical material, my focus was a positive, collaborative learning environment — mentoring students in coding best practices, giving constructive feedback, and helping them grow as developers. I maintained curriculum-aligned syllabi to meet departmental and institutional standards.',
+      'I taught game development as an adjunct professor at Northwest Vista College for nearly eight years, using Unreal Engine as the teaching platform. This playlist captures one full classroom term: starting with the fundamentals of the level and Blueprint editors, then building a complete puzzle game, and finally a racing game.\n\nBeyond the technical material, my focus was a positive, collaborative learning environment — mentoring students in coding best practices, giving constructive feedback, and helping them grow as developers. I maintained curriculum-aligned syllabi to meet departmental and institutional standards.',
     highlights: [
-      'Multi-year professor of Unreal Engine game development',
+      'Adjunct professor of game development for 7+ years (Northwest Vista College)',
       'A full term recorded as a public lecture series (fundamentals → puzzle game → racing game)',
       'Mentored students in coding best practices with hands-on feedback',
       'Maintained curriculum-aligned syllabi and course standards',
