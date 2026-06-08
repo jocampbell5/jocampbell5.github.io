@@ -137,11 +137,11 @@ const projects = [
     category: 'UI Engineering · Unreal Engine 5',
     year: '2024', // TODO: confirm the year
     summary:
-      'The front-end UI for a WW2 flight simulator — from my storyboards to a shipped interface, built in Unreal with C++ and Common UI.',
+      'The in-game UI for a WW2 flight simulator — from my storyboards to a shipped interface, built in Unreal Engine with C++ and Common UI (Unreal’s UI framework).',
     role: 'UI Engineer & Designer',
     tech: ['Unreal Engine 5', 'C++', 'Common UI', 'UMG', 'UI/UX'],
     overview:
-      'I designed and built the front-end UI for a WW2 flight simulator — starting from the storyboards and mockups in my design gallery, then implementing them in Unreal Engine with C++ and the Common UI framework.\n\nThe screens from the design set — main menu, message of the day, quick mission, options, controls, and modals — shipped in the released game. In the linked video, the game’s producer walks through the UI in detail (the first ~10 minutes), showing the interface in action.\n\nIt’s a full design-to-shipped story: concept, engineering, and the result running in a released title — explained by the producer.',
+      'I designed and built the in-game UI for a WW2 flight simulator — starting from the storyboards and mockups in my design gallery, then implementing them inside Unreal Engine with C++ and Common UI (Unreal’s UI framework).\n\nThe screens from the design set — main menu, message of the day, quick mission, options, controls, and modals — shipped in the released game. In the linked video, the game’s producer walks through the UI in detail (the first ~10 minutes), showing the interface in action.\n\nIt’s a full design-to-shipped story: concept, engineering, and the result running in a released title — explained by the producer.',
     highlights: [
       'Designed the UI as storyboards, then built it in-engine (C++ + Common UI)',
       'Menus, modals, options, controls, and live data screens — all shipped',

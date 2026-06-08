@@ -43,13 +43,6 @@ export default function About({ onClose }) {
         <span>Back to work</span>
       </button>
 
-      <button className="about-close" onClick={onClose} aria-label="Close about">
-        <span>Close</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-          <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.5" />
-        </svg>
-      </button>
-
       <motion.div
         className="about-inner"
         initial={{ y: 30, opacity: 0 }}

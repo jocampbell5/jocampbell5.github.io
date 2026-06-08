@@ -23,13 +23,6 @@ export default function CaseStudy({ project, onClose }) {
           </svg>
           <span>Back to work</span>
         </button>
-
-        <button className="case-close" onClick={onClose} aria-label="Close case study">
-          <span>Close</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
-        </button>
       </div>
 
       <header className="case-intro">

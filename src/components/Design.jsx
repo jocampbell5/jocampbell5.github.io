@@ -58,12 +58,6 @@ export default function Design({ onClose }) {
           </svg>
           <span>Back to work</span>
         </button>
-        <button className="design-close" onClick={onClose} aria-label="Close design gallery">
-          <span>Close</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
-        </button>
       </div>
 
       <div className="design-inner">
@@ -115,12 +109,6 @@ export default function Design({ onClose }) {
               <path d="M22 5H2M6 1L2 5l4 4" stroke="currentColor" strokeWidth="1.4" />
             </svg>
             <span>Back</span>
-          </button>
-
-          <button className="lightbox-btn lightbox-close" onClick={close} aria-label="Close image">
-            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
-              <path d="M3 3l16 16M19 3L3 19" stroke="currentColor" strokeWidth="1.6" />
-            </svg>
           </button>
 
           {lightbox.images.length > 1 && (
