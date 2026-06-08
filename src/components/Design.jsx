@@ -96,14 +96,16 @@ export default function Design({ onClose }) {
       </div>
 
       {current && (
-        <div
-          className="design-lightbox"
-          ref={boxRef}
-          onClick={close}
-          role="dialog"
-          aria-modal="true"
-        >
-          <button className="lightbox-btn lightbox-close" onClick={(e) => (e.stopPropagation(), close())} aria-label="Back to gallery">
+        <div className="design-lightbox" role="dialog" aria-modal="true">
+          {/* Scrolling image layer (kept separate so the controls below can
+              stay pinned to the viewport rather than scrolling with the image) */}
+          <div className="lightbox-scroll" ref={boxRef} onClick={close}>
+            <figure className="lightbox-figure" onClick={(e) => e.stopPropagation()}>
+              <img src={current.full || current.src} alt={current.caption} />
+            </figure>
+          </div>
+
+          <button className="lightbox-btn lightbox-close" onClick={close} aria-label="Back to gallery">
             <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
               <path d="M3 3l16 16M19 3L3 19" stroke="currentColor" strokeWidth="1.6" />
             </svg>
@@ -111,20 +113,12 @@ export default function Design({ onClose }) {
 
           {lightbox.images.length > 1 && (
             <>
-              <button
-                className="lightbox-btn lightbox-prev"
-                onClick={(e) => (e.stopPropagation(), nav(-1))}
-                aria-label="Previous image"
-              >
+              <button className="lightbox-btn lightbox-prev" onClick={() => nav(-1)} aria-label="Previous image">
                 <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
                   <path d="M16 4L7 13l9 9" stroke="currentColor" strokeWidth="2" fill="none" />
                 </svg>
               </button>
-              <button
-                className="lightbox-btn lightbox-next"
-                onClick={(e) => (e.stopPropagation(), nav(1))}
-                aria-label="Next image"
-              >
+              <button className="lightbox-btn lightbox-next" onClick={() => nav(1)} aria-label="Next image">
                 <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
                   <path d="M10 4l9 9-9 9" stroke="currentColor" strokeWidth="2" fill="none" />
                 </svg>
@@ -132,11 +126,7 @@ export default function Design({ onClose }) {
             </>
           )}
 
-          <figure className="lightbox-figure" onClick={(e) => e.stopPropagation()}>
-            <img src={current.full || current.src} alt={current.caption} />
-          </figure>
-
-          <div className="lightbox-caption" onClick={(e) => e.stopPropagation()}>
+          <div className="lightbox-caption">
             <span>{current.caption}</span>
             {lightbox.images.length > 1 && (
               <span className="lightbox-count">

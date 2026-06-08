@@ -46,7 +46,6 @@ const designs = [
       img('ev-group39', 'Firefighter character', 'png'),
       img('ev-group40', 'Firefighter character', 'png'),
       img('ev-crash-tree', 'EV crash into tree', 'png'),
-      img('ev-upside-car', 'Overturned vehicle', 'png'),
       img('ev-blanket', 'Fire blanket', 'png'),
     ],
   },

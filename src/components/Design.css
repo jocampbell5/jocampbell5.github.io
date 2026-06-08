@@ -147,17 +147,25 @@
 }
 
 /* Lightbox */
+/* Plain fixed wrapper — NO transform/filter here, so the fixed control buttons
+   anchor to the viewport instead of scrolling with the image. */
 .design-lightbox {
   position: fixed;
   inset: 0;
   z-index: 20;
-  background: rgba(4, 4, 6, 0.94);
-  backdrop-filter: blur(6px);
+}
+
+/* The scrolling image layer (this one carries the blur + scroll) */
+.lightbox-scroll {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: safe center; /* centre when it fits; top-align + scroll when tall */
   justify-content: center;
   overflow: auto; /* tall storyboards scroll instead of shrinking */
   padding: clamp(1.5rem, 4vw, 3.5rem);
+  background: rgba(4, 4, 6, 0.94);
+  backdrop-filter: blur(6px);
   cursor: zoom-out;
 }
 
