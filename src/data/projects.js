@@ -177,6 +177,40 @@ const projects = [
     playlist: 'PLl5xnLQ0CVsjlK57oEl6sbHmyBtFSWBTE', // full playlist embedded in the case study
   },
   {
+    id: 'missions',
+    title: 'Mission & Level Design',
+    category: 'Game Content Creation',
+    year: 'Ongoing',
+    summary:
+      'Designed 200+ missions for IL-2 Sturmovik: Great Battles — plus maps and missions across Arma 3, Prepar3D, Counter-Strike, MechWarrior 5, and StarCraft 2 — and taught it in a 43-part tutorial series.',
+    role: 'Level & Mission Designer',
+    tech: [
+      'IL-2 Great Battles',
+      'Arma 3',
+      'Prepar3D',
+      'Counter-Strike',
+      'MechWarrior 5',
+      'StarCraft 2',
+    ],
+    overview:
+      'Outside of engine work, I’ve spent years designing game content. In IL-2 Sturmovik: Great Battles I’ve built 200+ missions with the in-game editor, and I’ve created maps and missions across many other titles — Arma 3, Prepar3D, Counter-Strike, MechWarrior 5: Mercenaries, StarCraft 2, and more.\n\nTo help other creators, I produced a 43-part video tutorial series walking through how to build missions like mine in IL-2 Great Battles — from setup to the scripting that makes a mission come alive.',
+    highlights: [
+      '200+ missions designed for IL-2 Sturmovik: Great Battles',
+      'Maps & missions across Arma 3, Prepar3D, Counter-Strike, MechWarrior 5, and StarCraft 2',
+      '43-part tutorial series teaching IL-2 mission design',
+      'Fluent in a wide range of level / mission editors',
+    ],
+    links: [
+      {
+        label: 'IL-2 mission tutorials (YouTube)',
+        href: 'https://youtube.com/playlist?list=PLl5xnLQ0CVsijOBDFxtQLJC_jHWDWI9JI',
+      },
+    ],
+    accent: '#3fb6c9',
+    youtube: 'jcXIo7gOlXE', // first tutorial — card thumbnail
+    playlist: 'PLl5xnLQ0CVsijOBDFxtQLJC_jHWDWI9JI', // full playlist in the case study
+  },
+  {
     id: 'atlas',
     title: 'Atlas',
     category: 'Digital Twin',
