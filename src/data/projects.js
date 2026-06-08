@@ -132,47 +132,6 @@ const projects = [
     youtube: 'https://youtu.be/-_boofFqano',
   },
   {
-    id: 'c130',
-    title: 'C-130 VR Trainer',
-    category: 'VR Training · U.S. Air Force',
-    year: '2019–2021',
-    summary:
-      "VR training modules for the U.S. Air Force's 16th Training Squadron — interactive aircraft procedures, checklists, and documentation in immersive VR.",
-    role: 'Senior Unreal Engine Developer · Leidos',
-    tech: ['Unreal Engine', 'C++', 'Blueprints', 'SteamVR / OpenXR', 'Perforce', 'Azure DevOps'],
-    overview:
-      "At Leidos, I developed virtual-reality training modules for the U.S. Air Force's 16th Training Squadron using Unreal Engine, C++, and Blueprints.\n\nTrainees work through aircraft procedures in immersive VR — interactive checklists, technical documents, and step-by-step controller-guided tasks rendered around a full-scale C-130.\n\nBeyond feature work, I built and maintained automated build-and-test pipelines with Perforce and Azure DevOps, enforced coding standards and configuration management, and mentored mid- and junior-level developers in best practices.",
-    highlights: [
-      "Built VR training modules for the U.S. Air Force's 16th Training Squadron",
-      'Immersive full-scale aircraft procedures with interactive UI and documents',
-      'Set up automated build & test pipelines (Perforce, Azure DevOps)',
-      'Mentored mid- and junior-level developers and owned coding standards',
-    ],
-    accent: '#4ea1ff',
-    youtube: 'https://youtu.be/qg6_NLB_LHs',
-  },
-  {
-    id: 'aboutgolf',
-    title: 'aboutGOLF Simulator',
-    category: 'AR/XR · Unreal Engine 5',
-    year: '2021–2023',
-    summary:
-      'An AR/XR golf simulator in Unreal Engine 5 for indoor golf centers — hardware swing tracking, real ball physics, and custom in-engine tools that helped artists work faster.',
-    role: 'Senior Unreal Engine Developer · aboutGOLF',
-    tech: ['Unreal Engine 5', 'C++', '3Trak Tracking', 'AR / XR', 'Physics', 'Editor Tools'],
-    overview:
-      'At aboutGOLF I developed an AR/XR golf-simulation application in Unreal Engine 5 for indoor golf centers — including Premier Indoor Golf, State of Golf, The Back 9 Parlor, and the PGA.\n\nI integrated the 3Trak camera-tracking system with Unreal through its API and C++, transforming captured swing and ball-hit data into realistic physics for the virtual ball. I also led key UI work: the main menu, pause menu, live ball-data display, and a post-shot feedback system that gives players performance insights after every hit.\n\nThe video here shows another side of the role — custom in-engine tools I built to help our artists create better art, faster. Alongside new development I maintained legacy applications, fixing bugs, patching vulnerabilities, and optimizing performance.',
-    highlights: [
-      'AR/XR golf simulator in UE5, deployed to indoor golf centers (incl. the PGA)',
-      '3Trak camera tracking integrated via API + C++ into real ball physics',
-      'Designed core UI: main menu, pause, live ball data, and post-shot feedback',
-      'Built custom in-engine tools to speed up the art team (shown in the video)',
-      'Maintained legacy apps — bug fixes, security, and performance',
-    ],
-    accent: '#d9a441',
-    youtube: 'FUqpC23qFTM',
-  },
-  {
     id: 'flightsim-ui',
     title: 'WW2 Flight Sim — Game UI',
     category: 'UI Engineering · Unreal Engine 5',
@@ -206,6 +165,47 @@ const projects = [
       '/design/full/ww2-response.jpg',
       '/design/full/ww2-modal.jpg',
     ],
+  },
+  {
+    id: 'aboutgolf',
+    title: 'aboutGOLF Simulator',
+    category: 'AR/XR · Unreal Engine 5',
+    year: '2021–2023',
+    summary:
+      'An AR/XR golf simulator in Unreal Engine 5 for indoor golf centers — hardware swing tracking, real ball physics, and custom in-engine tools that helped artists work faster.',
+    role: 'Senior Unreal Engine Developer · aboutGOLF',
+    tech: ['Unreal Engine 5', 'C++', '3Trak Tracking', 'AR / XR', 'Physics', 'Editor Tools'],
+    overview:
+      'At aboutGOLF I developed an AR/XR golf-simulation application in Unreal Engine 5 for indoor golf centers — including Premier Indoor Golf, State of Golf, The Back 9 Parlor, and the PGA.\n\nI integrated the 3Trak camera-tracking system with Unreal through its API and C++, transforming captured swing and ball-hit data into realistic physics for the virtual ball. I also led key UI work: the main menu, pause menu, live ball-data display, and a post-shot feedback system that gives players performance insights after every hit.\n\nThe video here shows another side of the role — custom in-engine tools I built to help our artists create better art, faster. Alongside new development I maintained legacy applications, fixing bugs, patching vulnerabilities, and optimizing performance.',
+    highlights: [
+      'AR/XR golf simulator in UE5, deployed to indoor golf centers (incl. the PGA)',
+      '3Trak camera tracking integrated via API + C++ into real ball physics',
+      'Designed core UI: main menu, pause, live ball data, and post-shot feedback',
+      'Built custom in-engine tools to speed up the art team (shown in the video)',
+      'Maintained legacy apps — bug fixes, security, and performance',
+    ],
+    accent: '#d9a441',
+    youtube: 'FUqpC23qFTM',
+  },
+  {
+    id: 'c130',
+    title: 'C-130 VR Trainer',
+    category: 'VR Training · U.S. Air Force',
+    year: '2019–2021',
+    summary:
+      "VR training modules for the U.S. Air Force's 16th Training Squadron — interactive aircraft procedures, checklists, and documentation in immersive VR.",
+    role: 'Senior Unreal Engine Developer · Leidos',
+    tech: ['Unreal Engine', 'C++', 'Blueprints', 'SteamVR / OpenXR', 'Perforce', 'Azure DevOps'],
+    overview:
+      "At Leidos, I developed virtual-reality training modules for the U.S. Air Force's 16th Training Squadron using Unreal Engine, C++, and Blueprints.\n\nTrainees work through aircraft procedures in immersive VR — interactive checklists, technical documents, and step-by-step controller-guided tasks rendered around a full-scale C-130.\n\nBeyond feature work, I built and maintained automated build-and-test pipelines with Perforce and Azure DevOps, enforced coding standards and configuration management, and mentored mid- and junior-level developers in best practices.",
+    highlights: [
+      "Built VR training modules for the U.S. Air Force's 16th Training Squadron",
+      'Immersive full-scale aircraft procedures with interactive UI and documents',
+      'Set up automated build & test pipelines (Perforce, Azure DevOps)',
+      'Mentored mid- and junior-level developers and owned coding standards',
+    ],
+    accent: '#4ea1ff',
+    youtube: 'https://youtu.be/qg6_NLB_LHs',
   },
   {
     id: 'teaching',
