@@ -266,19 +266,44 @@
 }
 
 /* ---- Gallery ---- */
+.case-gallery-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(2rem, 5vw, 4rem);
+}
+
+.case-gallery-wrap .case-subhead {
+  margin: 0 0 1.2rem;
+}
+
 .case-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1rem;
-  padding: 0 var(--gutter) clamp(2rem, 5vw, 4rem);
-  max-width: 1280px;
-  margin: 0 auto;
 }
 
-.case-gallery img {
-  width: 100%;
+.case-gallery-item {
+  display: block;
   border-radius: 8px;
+  overflow: hidden;
   border: 1px solid var(--line);
+  background: #fff;
+  cursor: zoom-in;
+  transition: border-color 0.3s var(--easing), transform 0.3s var(--easing);
+}
+
+.case-gallery-item:hover {
+  border-color: var(--proj-accent);
+  transform: translateY(-3px);
+}
+
+.case-gallery-item img {
+  width: 100%;
+  /* fixed-height preview so tall storyboards don't dominate; full opens on click */
+  height: 300px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 /* ---- Footer ---- */

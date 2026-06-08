@@ -153,10 +153,22 @@ export default function CaseStudy({ project, onClose }) {
       </div>
 
       {project.gallery?.length > 0 && (
-        <div className="case-gallery">
-          {project.gallery.map((src, i) => (
-            <img key={i} src={src} alt={`${project.title} screenshot ${i + 1}`} loading="lazy" />
-          ))}
+        <div className="case-gallery-wrap">
+          <h3 className="case-subhead">Design &amp; storyboards</h3>
+          <div className="case-gallery">
+            {project.gallery.map((src, i) => (
+              <a
+                key={i}
+                className="case-gallery-item"
+                href={src}
+                target="_blank"
+                rel="noreferrer"
+                title="Open full image"
+              >
+                <img src={src} alt={`${project.title} design ${i + 1}`} loading="lazy" />
+              </a>
+            ))}
+          </div>
         </div>
       )}
 

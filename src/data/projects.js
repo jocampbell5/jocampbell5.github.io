@@ -80,18 +80,19 @@ const projects = [
     ],
     accent: '#ff5a36',
     youtube: 'https://youtu.be/rotu0dtGYXs',
+    gallery: ['/design/full/nfpa-panels.jpg', '/design/full/nfpa-storyboard.jpg'],
   },
   {
     id: 'dental',
     title: 'Behavioral Patient Training',
-    category: 'Healthcare Training · Unreal Engine 5',
+    category: 'VR Healthcare Training · Unreal Engine 5',
     year: '2025',
     summary:
-      'A solo-built UE5 simulator where dental and care students practice handling patients with behavioral challenges — talking to them out loud and adapting as the patient reacts.',
+      'A solo-built VR simulator where dental and care students practice handling patients with behavioral challenges — talking to them out loud and adapting as the patient reacts.',
     role: 'Solo Developer',
-    tech: ['Unreal Engine 5', 'C++', 'Blueprints', 'WhisperAI (local)', 'ElevenLabs', 'UI/UX'],
+    tech: ['Unreal Engine 5', 'C++', 'Blueprints', 'VR / OpenXR', 'WhisperAI (local)', 'ElevenLabs', 'UI/UX'],
     overview:
-      'A solo-built training application in Unreal Engine 5 where dental and care students practice working with patients who have behavioral challenges — anxiety, resistance, and distress — across realistic scenarios.\n\nStudents speak to the patient out loud. A local build of WhisperAI converts their speech to text, the app matches it against scenario keywords, and the patient responds positively or negatively (voiced with ElevenLabs). The goal is to build trust, gain cooperation, and complete the clinical task in a safe, repeatable simulation.\n\nI built it end to end — design, development, and AI integration. All assets are either from Fab or created by me.',
+      'A solo-built VR training application in Unreal Engine 5 where dental and care students practice working with patients who have behavioral challenges — anxiety, resistance, and distress — across realistic scenarios.\n\nStudents speak to the patient out loud. A local build of WhisperAI converts their speech to text, the app matches it against scenario keywords, and the patient responds positively or negatively (voiced with ElevenLabs). The goal is to build trust, gain cooperation, and complete the clinical task in a safe, repeatable simulation.\n\nI built it end to end — design, development, and AI integration. All assets are either from Fab or created by me.',
     highlights: [
       'Solo project — design, development, and AI integration end to end',
       'Speak aloud → local WhisperAI speech-to-text → keyword matching',
@@ -101,6 +102,7 @@ const projects = [
     ],
     accent: '#e3559a',
     youtube: 'https://youtu.be/r82fV0uxrEo',
+    gallery: ['/design/full/dental-flow.jpg'],
   },
   {
     id: 'ava',
