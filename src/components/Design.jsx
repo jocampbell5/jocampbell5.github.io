@@ -52,7 +52,12 @@ export default function Design({ onClose }) {
       transition={{ duration: 0.35 }}
     >
       <div className="design-bar">
-        <p className="eyebrow design-eyebrow">Design · 2D &amp; UI/UX</p>
+        <button className="design-back" onClick={onClose} aria-label="Back to work">
+          <svg width="22" height="10" viewBox="0 0 22 10" fill="none" aria-hidden="true">
+            <path d="M22 5H2M6 1L2 5l4 4" stroke="currentColor" strokeWidth="1.4" />
+          </svg>
+          <span>Back to work</span>
+        </button>
         <button className="design-close" onClick={onClose} aria-label="Close design gallery">
           <span>Close</span>
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
@@ -105,7 +110,14 @@ export default function Design({ onClose }) {
             </figure>
           </div>
 
-          <button className="lightbox-btn lightbox-close" onClick={close} aria-label="Back to gallery">
+          <button className="lightbox-back" onClick={close} aria-label="Back to gallery">
+            <svg width="22" height="10" viewBox="0 0 22 10" fill="none" aria-hidden="true">
+              <path d="M22 5H2M6 1L2 5l4 4" stroke="currentColor" strokeWidth="1.4" />
+            </svg>
+            <span>Back</span>
+          </button>
+
+          <button className="lightbox-btn lightbox-close" onClick={close} aria-label="Close image">
             <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
               <path d="M3 3l16 16M19 3L3 19" stroke="currentColor" strokeWidth="1.6" />
             </svg>

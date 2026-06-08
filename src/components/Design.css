@@ -29,7 +29,8 @@
   margin: 0;
 }
 
-.design-close {
+.design-close,
+.design-back {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -45,8 +46,18 @@
   transition: border-color 0.3s var(--easing);
 }
 
-.design-close:hover {
+.design-close:hover,
+.design-back:hover {
   border-color: var(--accent);
+}
+
+.design-back svg {
+  color: var(--accent);
+  transition: transform 0.3s var(--easing);
+}
+
+.design-back:hover svg {
+  transform: translateX(-4px);
 }
 
 .design-inner {
@@ -208,6 +219,42 @@
 .lightbox-close {
   top: clamp(1.1rem, 2.5vw, 1.8rem);
   right: var(--gutter);
+}
+
+/* Back-to-gallery pill, pinned top-left like the case-study back button */
+.lightbox-back {
+  position: fixed;
+  z-index: 2;
+  top: clamp(1.1rem, 2.5vw, 1.8rem);
+  left: var(--gutter);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s var(--easing), background 0.3s var(--easing);
+}
+
+.lightbox-back svg {
+  color: var(--accent);
+  transition: transform 0.3s var(--easing);
+}
+
+.lightbox-back:hover {
+  border-color: var(--accent);
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.lightbox-back:hover svg {
+  transform: translateX(-4px);
 }
 
 .lightbox-prev {
