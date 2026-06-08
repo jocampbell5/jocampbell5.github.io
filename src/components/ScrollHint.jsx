@@ -9,7 +9,7 @@ export default function ScrollHint({ index, total, hidden }) {
         <span className="scroll-wheel" aria-hidden="true">
           <span className="scroll-bead" />
         </span>
-        Scroll · drag · click
+        Scroll · arrows · click
       </span>
 
       <span className="scroll-count" aria-hidden="true">
