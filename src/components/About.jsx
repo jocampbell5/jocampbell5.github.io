@@ -66,30 +66,28 @@ export default function About({ onClose }) {
         <div className="about-cols">
           <div className="about-bio">
             <p>
-              I use Unreal Engine as a synthetic-data engine for computer vision —
-              generating labelled images and video at scale, auto-exporting the
-              annotations, and feeding them straight into model training, so teams
-              can build vision models without the cost of hand-collected data.
+              I’m John Campbell, a Senior Software Engineer who builds real-time
+              applications in Unreal Engine — simulations, VR training, digital
+              twins, and computer vision. Designing the UI/UX is my favorite part:
+              I love shaping how people see, understand, and interact with complex
+              systems, and making it all feel clear and effortless.
             </p>
             <p>
-              I’m John Campbell, a Senior Software Engineer specialising in
-              Unreal Engine — simulations, VR training, digital twins, and
-              computer vision. C++ is my primary language, with Python for the
-              pipelines and tooling around the app, plus C#, JavaScript, and
-              e-learning platforms like Articulate Storyline 360 to build
-              everything an application needs end to end.
+              C++ is my primary language, with Python for the tooling and pipelines
+              around the app — plus C#, JavaScript, and platforms like Articulate
+              Storyline 360 when a project calls for them. I like owning the whole
+              thing, from the engine code to the interface people actually touch.
             </p>
             <p>
-              Designing the UI/UX is my favourite part of the work. I love
-              shaping how people see, understand, and interact with these
-              real-time systems — turning complex tools into interfaces that feel
-              clear and effortless.
+              One bit I’m especially proud of: using Unreal as a synthetic-data
+              engine for computer vision — generating labelled images and video at
+              scale and feeding them straight into model training, so teams can
+              build vision models without the cost of collecting and labelling
+              real-world data.
             </p>
             <p>
-              Dedicated to creating innovative software solutions and providing
-              technical leadership, I’m seeking a challenging role in a dynamic
-              organization where I can drive software-development projects to
-              success.
+              I’m currently looking for a new challenge — a role where I can keep
+              turning hard problems into software people genuinely enjoy using.
             </p>
           </div>
 
