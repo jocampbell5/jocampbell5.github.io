@@ -82,6 +82,54 @@ const projects = [
     youtube: 'https://youtu.be/rotu0dtGYXs',
   },
   {
+    id: 'dental',
+    title: 'Behavioral Patient Training',
+    category: 'Healthcare Training · Unreal Engine 5',
+    year: '2025',
+    summary:
+      'A solo-built UE5 simulator where dental and care students practice handling patients with behavioral challenges — talking to them out loud and adapting as the patient reacts.',
+    role: 'Solo Developer',
+    tech: ['Unreal Engine 5', 'C++', 'Blueprints', 'WhisperAI (local)', 'ElevenLabs', 'UI/UX'],
+    overview:
+      'A solo-built training application in Unreal Engine 5 where dental and care students practice working with patients who have behavioral challenges — anxiety, resistance, and distress — across realistic scenarios.\n\nStudents speak to the patient out loud. A local build of WhisperAI converts their speech to text, the app matches it against scenario keywords, and the patient responds positively or negatively (voiced with ElevenLabs). The goal is to build trust, gain cooperation, and complete the clinical task in a safe, repeatable simulation.\n\nI built it end to end — design, development, and AI integration. All assets are either from Fab or created by me.',
+    highlights: [
+      'Solo project — design, development, and AI integration end to end',
+      'Speak aloud → local WhisperAI speech-to-text → keyword matching',
+      'Patients respond positively or negatively, voiced with ElevenLabs',
+      'Scenario select, briefings, in-world tools, and task checklists',
+      'All assets from Fab or created by me',
+    ],
+    accent: '#e3559a',
+    youtube: 'https://youtu.be/r82fV0uxrEo',
+  },
+  {
+    id: 'ava',
+    title: 'AI Avatar',
+    category: 'Conversational AI',
+    year: '2023',
+    summary:
+      'A real-time conversational AI avatar in Unreal Engine — ask a question by voice and a photoreal human answers, with live speech, voice, and facial animation.',
+    role: 'AI / Unreal Developer · GHD',
+    tech: [
+      'Unreal Engine 5',
+      'MetaHuman',
+      'ChatGPT API',
+      'ElevenLabs',
+      'NVIDIA Omniverse',
+      'Whisper',
+    ],
+    overview:
+      "Built at GHD as a client proposal, this is a real-time AI avatar in Unreal Engine that helps learners build knowledge in a subject simply by talking to it.\n\nIt chains several AI services live: the user speaks, Whisper transcribes the audio to text, ChatGPT generates a response, ElevenLabs converts that response into a natural voice, and NVIDIA Omniverse drives lip-sync facial animation from the audio. The learner reads the reply on screen, hears the avatar speak, and watches its lips move in sync — all generated on the fly.\n\nIt's a demonstration of integrating multiple AI APIs into one cohesive, real-time experience for the end user.",
+    highlights: [
+      'Real-time pipeline: speech → Whisper → ChatGPT → ElevenLabs → Omniverse lip-sync',
+      'Photoreal MetaHuman avatar with live voice and facial animation',
+      'Custom voice and on-the-fly answers for any subject',
+      'Built as a client proposal at GHD',
+    ],
+    accent: '#8b7cff',
+    youtube: 'https://youtu.be/-_boofFqano',
+  },
+  {
     id: 'c130',
     title: 'C-130 VR Trainer',
     category: 'VR Training · U.S. Air Force',
@@ -121,33 +169,6 @@ const projects = [
     ],
     accent: '#d9a441',
     youtube: 'FUqpC23qFTM',
-  },
-  {
-    id: 'ava',
-    title: 'AI Avatar',
-    category: 'Conversational AI',
-    year: '2023',
-    summary:
-      'A real-time conversational AI avatar in Unreal Engine — ask a question by voice and a photoreal human answers, with live speech, voice, and facial animation.',
-    role: 'AI / Unreal Developer · GHD',
-    tech: [
-      'Unreal Engine 5',
-      'MetaHuman',
-      'ChatGPT API',
-      'ElevenLabs',
-      'NVIDIA Omniverse',
-      'Whisper',
-    ],
-    overview:
-      "Built at GHD as a client proposal, this is a real-time AI avatar in Unreal Engine that helps learners build knowledge in a subject simply by talking to it.\n\nIt chains several AI services live: the user speaks, Whisper transcribes the audio to text, ChatGPT generates a response, ElevenLabs converts that response into a natural voice, and NVIDIA Omniverse drives lip-sync facial animation from the audio. The learner reads the reply on screen, hears the avatar speak, and watches its lips move in sync — all generated on the fly.\n\nIt's a demonstration of integrating multiple AI APIs into one cohesive, real-time experience for the end user.",
-    highlights: [
-      'Real-time pipeline: speech → Whisper → ChatGPT → ElevenLabs → Omniverse lip-sync',
-      'Photoreal MetaHuman avatar with live voice and facial animation',
-      'Custom voice and on-the-fly answers for any subject',
-      'Built as a client proposal at GHD',
-    ],
-    accent: '#8b7cff',
-    youtube: 'https://youtu.be/-_boofFqano',
   },
   {
     id: 'teaching',
