@@ -26,6 +26,20 @@
   color: var(--text-faint);
 }
 
+/* Show device-appropriate wording: keyboard/mouse vs touch */
+.cue-touch {
+  display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .cue-desktop {
+    display: none;
+  }
+  .cue-touch {
+    display: inline;
+  }
+}
+
 .scroll-wheel {
   width: 16px;
   height: 26px;
