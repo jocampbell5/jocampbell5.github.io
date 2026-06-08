@@ -94,12 +94,6 @@ const designs = [
     ],
   },
   {
-    id: 'ai-avatar',
-    title: 'AI Avatar',
-    blurb: 'Interface wireframe for the real-time conversational AI avatar.',
-    images: [img('ai-avatar-design', 'Avatar chat interface wireframe')],
-  },
-  {
     id: 'racing',
     title: 'Racing Game UI',
     blurb: 'Production game-interface design — front end, HUD, and control screens.',
@@ -116,7 +110,7 @@ const designs = [
   },
   {
     id: 'ww2',
-    title: 'WW2 AirSim — Combat Pilot UI',
+    title: 'WW2 Flight Sim — Game UI',
     blurb: 'Front-end and menu design for a WW2 air-combat flight simulator.',
     images: [
       img('ww2-motd', 'Message of the day'),
