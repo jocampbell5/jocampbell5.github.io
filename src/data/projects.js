@@ -101,7 +101,7 @@ const projects = [
       'All assets from Fab or created by me',
     ],
     accent: '#e3559a',
-    youtube: 'https://youtu.be/r82fV0uxrEo',
+    youtube: 'https://youtu.be/0IoqPVrpT3g',
     gallery: ['/design/full/dental-flow.jpg'],
   },
   {
