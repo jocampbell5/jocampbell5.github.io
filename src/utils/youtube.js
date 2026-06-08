@@ -33,3 +33,7 @@ export const youTubeThumbFallback = (id) => `https://i.ytimg.com/vi/${id}/hqdefa
 // Privacy-friendly embed URL.
 export const youTubeEmbed = (id) =>
   `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1`
+
+// Embed an entire playlist (plays through, with the lesson list).
+export const youTubePlaylistEmbed = (playlistId) =>
+  `https://www.youtube-nocookie.com/embed/videoseries?list=${playlistId}&rel=0&modestbranding=1`

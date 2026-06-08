@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import Media from './Media'
-import { getYouTubeId, youTubeEmbed } from '../utils/youtube'
+import { getYouTubeId, youTubeEmbed, youTubePlaylistEmbed } from '../utils/youtube'
 import './CaseStudy.css'
 
 export default function CaseStudy({ project, onClose }) {
@@ -43,7 +43,16 @@ export default function CaseStudy({ project, onClose }) {
 
       {/* The video is the star of the page — large and playable. */}
       <div className="case-player">
-        {ytId ? (
+        {project.playlist ? (
+          <iframe
+            className="case-video"
+            src={youTubePlaylistEmbed(project.playlist)}
+            title={`${project.title} — playlist`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        ) : ytId ? (
           <iframe
             className="case-video"
             src={youTubeEmbed(ytId)}

@@ -129,6 +129,33 @@ const projects = [
     youtube: 'https://youtu.be/-_boofFqano',
   },
   {
+    id: 'teaching',
+    title: 'Teaching — Unreal Game Dev',
+    category: 'Education · Unreal Engine',
+    year: 'Multi-year', // TODO: set the exact years you taught
+    summary:
+      'A full college term teaching Unreal Engine game development — from engine fundamentals to building a puzzle game and a racing game, recorded as a public lecture series.',
+    role: 'Professor / Instructor',
+    tech: ['Unreal Engine', 'Blueprints', 'C++', 'Game Design', 'Curriculum'],
+    overview:
+      'For several years I taught game development as a professor, using Unreal Engine as the teaching platform. This playlist captures one full classroom term: starting with the fundamentals of the level and Blueprint editors, then building a complete puzzle game, and finally a racing game.\n\nBeyond the technical material, my focus was a positive, collaborative learning environment — mentoring students in coding best practices, giving constructive feedback, and helping them grow as developers. I maintained curriculum-aligned syllabi to meet departmental and institutional standards.',
+    highlights: [
+      'Multi-year professor of Unreal Engine game development',
+      'A full term recorded as a public lecture series (fundamentals → puzzle game → racing game)',
+      'Mentored students in coding best practices with hands-on feedback',
+      'Maintained curriculum-aligned syllabi and course standards',
+    ],
+    links: [
+      {
+        label: 'Full course playlist (YouTube)',
+        href: 'https://youtube.com/playlist?list=PLl5xnLQ0CVsjlK57oEl6sbHmyBtFSWBTE',
+      },
+    ],
+    accent: '#34d399',
+    youtube: 'G3Pm0ux0DiI', // first lesson — used for the card thumbnail
+    playlist: 'PLl5xnLQ0CVsjlK57oEl6sbHmyBtFSWBTE', // full playlist embedded in the case study
+  },
+  {
     id: 'atlas',
     title: 'Atlas',
     category: 'Digital Twin',
