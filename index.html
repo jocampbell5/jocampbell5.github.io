@@ -37,11 +37,20 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- Web analytics -->
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "2905113b73fd473cb2459e7bcc1c3fee"}'
-    ></script>
+    <!-- Web analytics. Skipped for opted-out browsers: visit /?notrack=1 once
+         to exclude this device, /?notrack=0 to start counting it again. -->
+    <script>
+      (function () {
+        var p = new URLSearchParams(window.location.search)
+        if (p.get('notrack') === '1') localStorage.setItem('cf-notrack', '1')
+        if (p.get('notrack') === '0') localStorage.removeItem('cf-notrack')
+        if (localStorage.getItem('cf-notrack') === '1') return
+        var s = document.createElement('script')
+        s.defer = true
+        s.src = 'https://static.cloudflareinsights.com/beacon.min.js'
+        s.setAttribute('data-cf-beacon', '{"token": "2905113b73fd473cb2459e7bcc1c3fee"}')
+        document.body.appendChild(s)
+      })()
+    </script>
   </body>
 </html>
