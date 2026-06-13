@@ -11,6 +11,15 @@ import About from './components/About'
 import Design from './components/Design'
 import './App.css'
 
+// Map the current view to a URL path. Carousel position is intentionally
+// ignored so scrolling the deck doesn't flood the history / analytics.
+function pathForView({ openId, designOpen, aboutOpen }) {
+  if (openId) return `/work/${openId}`
+  if (designOpen) return '/design'
+  if (aboutOpen) return '/about'
+  return '/'
+}
+
 export default function App() {
   // Which project is centered / active in the carousel.
   const [activeIndex, setActiveIndex] = useState(0)
@@ -19,6 +28,8 @@ export default function App() {
   // Whether the About / Design panels are open.
   const [aboutOpen, setAboutOpen] = useState(false)
   const [designOpen, setDesignOpen] = useState(false)
+  // True once the initial URL has been read into state; gates URL writes.
+  const [routed, setRouted] = useState(false)
 
   // Lock so one scroll gesture / key press = one step.
   const lock = useRef(false)
@@ -31,6 +42,44 @@ export default function App() {
   }, [])
 
   const goTo = useCallback((i) => setActiveIndex(clamp(i)), [])
+
+  // --- Routing: keep the URL in sync with the open view, so each section is
+  // its own analytics page view and Back/Forward closes overlays. ---
+  const applyPath = useCallback((path) => {
+    const work = path.match(/^\/work\/(.+)$/)
+    if (work) {
+      const id = decodeURIComponent(work[1])
+      const idx = projects.findIndex((p) => p.id === id)
+      if (idx !== -1) {
+        setActiveIndex(idx)
+        setOpenId(id)
+        setAboutOpen(false)
+        setDesignOpen(false)
+        return
+      }
+    }
+    setOpenId(null)
+    setAboutOpen(path === '/about')
+    setDesignOpen(path === '/design')
+  }, [])
+
+  // Restore the view from the URL on load, then follow Back/Forward.
+  useEffect(() => {
+    applyPath(window.location.pathname)
+    setRouted(true)
+    const onPop = () => applyPath(window.location.pathname)
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [applyPath])
+
+  // Reflect the current view in the URL. Cloudflare auto-records pushState.
+  useEffect(() => {
+    if (!routed) return
+    const path = pathForView({ openId, designOpen, aboutOpen })
+    if (window.location.pathname !== path) {
+      window.history.pushState(null, '', path)
+    }
+  }, [routed, openId, designOpen, aboutOpen])
 
   // --- Wheel navigation (one step per gesture) ---
   useEffect(() => {
