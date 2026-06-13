@@ -135,7 +135,7 @@ const projects = [
     id: 'flightsim-ui',
     title: 'WW2 Flight Sim — Game UI',
     category: 'UI Engineering · Unreal Engine 5',
-    year: '2024', // TODO: confirm the year
+    year: '2026',
     summary:
       'The in-game UI for a WW2 flight simulator — from my storyboards to a shipped interface, built in Unreal Engine with C++ and Common UI (Unreal’s UI framework).',
     role: 'UI Engineer & Designer',
