@@ -41,14 +41,12 @@ function transformFor(offset, cfg) {
   }
 }
 
-// Dim + desaturate inactive cards. Kept OUT of the framer-motion animation
-// (and out of `will-change`) so Chrome isn't re-rasterizing these large
-// filtered layers every frame; it transitions cheaply via CSS instead.
-function filterFor(offset) {
-  const abs = Math.abs(offset)
-  return offset === 0
-    ? 'none'
-    : `grayscale(0.85) brightness(${Math.max(0.35, 0.7 - abs * 0.12)})`
+// Depth dimming for inactive cards, expressed as the opacity of a black overlay
+// (a pure compositor operation) instead of a `brightness()` filter — so cards
+// never re-rasterize while moving. 0 = active card, up to ~0.65 at the back.
+// Grayscale is handled separately as a constant filter on the image (cached).
+function dimFor(offset) {
+  return offset === 0 ? 0 : 1 - Math.max(0.35, 0.7 - Math.abs(offset) * 0.12)
 }
 
 export default function Carousel({ projects, activeIndex, onSelect, onOpen }) {
@@ -66,7 +64,7 @@ export default function Carousel({ projects, activeIndex, onSelect, onOpen }) {
             <motion.button
               key={project.id}
               className={`card ${isActive ? 'card--active' : ''}`}
-              style={{ zIndex: 100 - Math.abs(offset), filter: filterFor(offset) }}
+              style={{ zIndex: 100 - Math.abs(offset) }}
               initial={false}
               animate={t}
               transition={{ type: 'spring', stiffness: 140, damping: 22 }}
@@ -79,7 +77,16 @@ export default function Carousel({ projects, activeIndex, onSelect, onOpen }) {
               aria-current={isActive}
             >
               <span className="card-frame">
-                <Media project={project} playing={isActive} />
+                <Media
+                  project={project}
+                  playing={isActive}
+                  className={isActive ? '' : 'media--dim'}
+                />
+                <span
+                  className="card-shade"
+                  style={{ opacity: dimFor(offset) }}
+                  aria-hidden="true"
+                />
                 {isActive && (
                   <span className="card-open" aria-hidden="true">
                     View case study
