@@ -38,12 +38,17 @@ function transformFor(offset, cfg) {
     rotateX: cfg.tilt,
     rotateZ: cfg.skew,
     opacity: abs > WINDOW ? 0 : Math.max(0, 1 - abs * 0.26),
-    // Active card is full colour; the rest are dimmed + desaturated.
-    filter:
-      offset === 0
-        ? 'grayscale(0) brightness(1)'
-        : `grayscale(0.85) brightness(${Math.max(0.35, 0.7 - abs * 0.12)})`,
   }
+}
+
+// Dim + desaturate inactive cards. Kept OUT of the framer-motion animation
+// (and out of `will-change`) so Chrome isn't re-rasterizing these large
+// filtered layers every frame; it transitions cheaply via CSS instead.
+function filterFor(offset) {
+  const abs = Math.abs(offset)
+  return offset === 0
+    ? 'none'
+    : `grayscale(0.85) brightness(${Math.max(0.35, 0.7 - abs * 0.12)})`
 }
 
 export default function Carousel({ projects, activeIndex, onSelect, onOpen }) {
@@ -61,7 +66,7 @@ export default function Carousel({ projects, activeIndex, onSelect, onOpen }) {
             <motion.button
               key={project.id}
               className={`card ${isActive ? 'card--active' : ''}`}
-              style={{ zIndex: 100 - Math.abs(offset) }}
+              style={{ zIndex: 100 - Math.abs(offset), filter: filterFor(offset) }}
               initial={false}
               animate={t}
               transition={{ type: 'spring', stiffness: 140, damping: 22 }}

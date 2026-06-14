@@ -26,7 +26,10 @@
   width: clamp(280px, 52vw, 1100px);
   aspect-ratio: 16 / 9;
   transform-style: preserve-3d;
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
+  /* Cheap CSS transition for the dim/desaturate (see filterFor in Carousel.jsx),
+     instead of tweening filter per-frame in JS. */
+  transition: filter 0.45s var(--easing);
   padding: 0;
 }
 
